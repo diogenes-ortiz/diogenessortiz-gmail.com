@@ -1,0 +1,46 @@
+.container-fluid {
+    background-color: #202020;
+    color: white;
+    height: 300px;
+}
+
+h2 {
+    margin-top: 20px;
+    text-align: center;
+}
+p {
+    padding-left: 107px;
+    text-align: justify;
+    
+}
+
+img {
+    margin-top: 15px;
+    margin-right: 27px;
+    padding-left: 10px;
+    max-width: 45px;
+}
+
+.seguinos {
+    margin-top: 15px;
+    
+}
+
+.col-12 {
+    padding-left: 79px
+}
+
+.copyright {
+    margin-top: 38px;
+    text-align: center;
+    text-decoration: none;
+    color: #C7C7C7;
+
+}
+
+.politica {
+    margin-top: 38px;
+    text-align: center;
+    color:#C7C7C7 ;
+}
+
