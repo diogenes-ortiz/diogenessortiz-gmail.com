@@ -68,6 +68,7 @@ body {
     height: 40px;
     font-size: 1.5em;
     margin-left: 0px;
+    top:10%;
     
   }
   
@@ -160,6 +161,14 @@ body {
   .navigate-bar{
     bottom:10px
   }
+ .searchbutton{
+
+   background-color: black;
+   border:solid 1px black;
+   padding-bottom: 4px;
+   right:104%;
+ }
+
   div.shopbag.col-6{
     bottom:16px;
     display: inline-block;
@@ -181,6 +190,66 @@ body {
     padding-left:14px;
     top:-13px;
   }
+ div.botonera-izquierda.col-1{
+   top:5px;
+ }
+ div.botonera-izquierda-hombre.col-1{
+  top:5px;
+}
+div.botonera-izquierda-logo.col-1{
+  top:5px;
+}
+  @media only screen and (max-width: 700px) {
+    .barrabuscadora {
+      display: none;
+    }
+    div.botonera-izquierda.col-1{
+      margin-left: 104px;
+    }
+    a.buttons{
+      font-size: 15px;
+    }
+  }
+
+.options{
+  display: none;
+}
+
+.barrabuscadora{
+  top:15px;
+  margin-left: 10%;
+}
+@media (max-width: 1120px){
+  a.buttons{
+    font-size: 20px;
+  }
+}
+@media (max-width: 972px){
+  a.buttons{
+    font-size: 15px;
+  }
+}
+@media (max-width: 700px){
+  a.buttons{
+    display: none;
+  }
+  .options{
+    display: block;
+  }
+  .barrabuscadora {
+    display: none;
+  }
+}
+
+
+
+
+
+
+
+
+
+
   .cajaP {
     border: 3px black inset;
     padding-top: 2%;
