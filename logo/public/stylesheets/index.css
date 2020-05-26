@@ -89,8 +89,15 @@ body {
     margin-bottom: 20px;
     padding-top: 10px;
   }
+  .ultimas-tendencias{
+    text-align: center;
+    border-bottom: solid black 2px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    padding-top: 10px;
+  }
   .fotitos{
-    width:90%;
+    width:100%;
   }
   
   .productos{
@@ -174,55 +181,125 @@ body {
     padding-left:14px;
     top:-13px;
   }
-  .campera{
-    display: inline-block;
-    max-width: 24%;
+  .cajaP {
+    border: 3px black inset;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin-left: 5%;
+    margin-right: 2%;
+    margin-bottom: 4%;
+    box-shadow: 6px 6px 6px grey;
+    margin-top: 2%;
+    background-color: white;
+
+}
+
+.nombreP {
+    margin-top: 4%;
+}
+
+.precioP {
+    margin-top: 1%;
+    margin-bottom: 3%;
+}
+
+.cora {
+    background-color: black;
+    border: black 1px inset;
+    color: white;
+    fill: white;
+}
+
+.cora:hover {
+    background-color: pink;
+    border: pink 2px solid;
+
+}
+
+.bolsa {
+    background-color: white;
+    border: black 2px solid;
+    color: black;
+}
+
+.bolsa:hover {
+    background-color: grey;
+    border: grey 2px solid;
+    color: black;
+}
+
+
+.bolsita {
+    margin-bottom: 5%;
+}
+
+.bolsita:hover {
+    fill: black;
+}
+
+.articulos {
+    background-color: white;
+}
+
+h2 {
+    color: red;
+}
+
+.rebaja {
+    color: red;
+}
+del{
+  text-decoration: none;
+}
+  @media (max-width: 991px){
+    .cajaP{
+      margin-left: 4%;
+    }
+  }
+@media (min-width: 992px){
+.col-lg-3 {
+  max-width:22%
+  }
+
+
+
+
+@media (max-width: 576px) {
+    .cajaP {
+        border: 3px black inset;
+        padding-top: 2%;
+        padding-bottom: 2%;
+        margin-left: 3%;
+        margin-right: 3%;
+        margin-bottom: 4%;
+        box-shadow: 6px 6px 6px grey;
+        margin-top: 2%;
+        background-color: white;
+    }
+
+    .filtrar {
+        margin-left: 0%;
+        margin-right: 0%;
+        margin-top: 10px;
+        background-color: black;
+        border: black 2px solid;
+        color: black;
+        border-radius: 2%;
+    }
     
-  }
-  .camisa{
-  display: inline-block;
-  max-width: 24%;
-  }
-  .sweaternaranja{
-  display:inline-block;
-  max-width: 24%;
-  }
-  .remera{
-    display:inline-block;
-    max-width: 24%;
-  }
-  @media (max-width: 768px){
-    .productos{
-      display: inline-block;
-      max-width: 49%;
-    }
-  }
-  @media (max-width: 500px){
-    .productos{
-      display: inline-block;
-      max-width: 100%;
-    }
-  }
-  @media (max-width:1100px){
-  .buttons{
-      font-size: 144%;
-    }
-  }
-  @media (max-width:1100px){
-    .buttons{
-        font-size: 144%;
+}
+@media (max-width: 990px) {
+      .cajaP {
+
+          margin-left: 10%;
+
       }
     }
-    @media (max-width:936px){
-      .buttons{
-          font-size: 110%;
-        }
-      }
-        @media (min-width:1200px){
-          .offset-xl-3{
-            margin-left: 22%;
-          }
-        }
-        .banner{
-          height:50% ;
-        }
+
+.section.cajaP.col-lg-3{
+  max-width: 22%;
+}
+a.buttons:hover{
+  color: white;
+  text-decoration: none;
+}
