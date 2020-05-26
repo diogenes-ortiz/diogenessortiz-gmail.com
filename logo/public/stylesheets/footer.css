@@ -1,46 +1,59 @@
-.container-fluid {
-    background-color: #202020;
+.base {
+    background-color: rgb(63, 62, 62);
     color: white;
-    height: 300px;
+    height: 360px;
 }
 
-h2 {
+.fb {
+    max-width: 40px;
+    max-height: 40px;
     margin-top: 20px;
-    text-align: center;
-}
-p {
-    padding-left: 107px;
-    text-align: justify;
-    
+    margin-bottom: 20px;
 }
 
-img {
-    margin-top: 15px;
-    margin-right: 27px;
-    padding-left: 10px;
+.inst {
     max-width: 45px;
+    max-height: 45px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
-.seguinos {
-    margin-top: 15px;
-    
+.tw {
+    max-width: 40px;
+    max-height: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
-.col-12 {
-    padding-left: 79px
+.hs {
+    max-width: 45px;
+    max-height: 45px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
-.copyright {
-    margin-top: 38px;
-    text-align: center;
-    text-decoration: none;
-    color: #C7C7C7;
-
+.sm {
+    max-width: 45px;
+    max-height: 45px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
-.politica {
-    margin-top: 38px;
-    text-align: center;
-    color:#C7C7C7 ;
+.ct {
+    max-width: 45px;
+    max-height: 45px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
+
+
+label {
+    margin-left: 15px;
+}
+
+.parte2 {
+    height: 100px;
+    background-color: black;
+    padding-top: 20px;
+}
