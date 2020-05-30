@@ -29,7 +29,7 @@ body{
     }
     input.col-10{
         margin-bottom:10px;
-        
+        color:red;
     }
     .descripcion{
         margin: 0px;
@@ -243,6 +243,3 @@ body{
     .botonregistrate{
         margin-top: 10%;
     }
- .contenedor{
-   margin-bottom:10%;
- }

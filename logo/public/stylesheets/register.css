@@ -219,13 +219,4 @@ body{
         padding-left:14px;
         top:-13px;
       }
-    .contenedor{
-      margin-bottom: 10%;
-    }
-    @media (max-width: 840px) {
-      h3 {
-
-          font-size: 10px;
-
-      }
-    }
+    
