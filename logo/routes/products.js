@@ -3,11 +3,11 @@ var router = express.Router();
 var productsController = require("../controllers/productsController")
 
 /* GET home page. */
-router.get("/hombres", productsController.hombreMain);
+router.get("/genero/:productsGenero", productsController.Mix);
 
-router.get("/mujeres", productsController.mujerMain);
 
-router.get("/sale", productsController.saleMain);
+
+//router.get("/:sale", productsController.saleMain);
 
 router.get("/detalle", productsController.detail);
 

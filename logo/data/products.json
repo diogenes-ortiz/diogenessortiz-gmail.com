@@ -1,0 +1,59 @@
+[
+    {
+        "foto": "/images/Camisa.jpg",
+        "nombre": "Camisa",
+        "precio": "2.200",
+        "talles": [
+            "XL",
+            "L",
+            "M",
+            "S",
+            "XS"
+        ],
+        "categoria": "Camisas",
+        "genero": "hombre",
+        "sale": "no"
+    },
+    {
+        "foto": "/images/Mujer1.jpg",
+        "nombre": "Vestido animal print",
+        "precio": "5.000",
+        "talles": [
+            "XL",
+            "L",
+            "XS"
+        ],
+        "categoria": "Vestidos",
+        "genero": "mujer",
+        "sale": "no"
+    },
+    {
+        "foto": "/images/Mujer2.jpg",
+        "nombre": "Campera militar",
+        "precio": "13.000",
+        "talles": [
+            "XL",
+            "L",
+            "M",
+            "XS"
+        ],
+        "categoria": "Abrigos",
+        "genero": "mujer",
+        "sale": "no"
+    },
+    {
+        "foto": "/images/Mujer3.jpg",
+        "nombre": "Cardigan",
+        "precio": "25.000",
+        "talles": [
+            "XL",
+            "L",
+            "M",
+            "S",
+            "XS"
+        ],
+        "categoria": "Abrigos",
+        "genero": "mujer",
+        "sale": "no"
+    }
+]

@@ -1,8 +1,18 @@
 const fs = require('fs');
 
 const productsController = {
-    hombreMain : function(req, res, next) {
-        res.render("products/hombres")
+    Mix : function(req, res, next) {
+        let datajson = fs.readFileSync('./data/products.json');
+        let datajs = JSON.parse(datajson);
+
+        let genero = []
+		datajs.forEach(function (product) {
+			if (product.genero == req.params.productsGenero) {
+				genero.push(product)
+			}
+		})
+
+        res.render("products/productsMix", {datajs : datajs, genero : genero, nombreGenero : req.params.productsGenero});
     },
 
     mujerMain : function(req, res, next) {
