@@ -5,9 +5,7 @@ var productsController = require("../controllers/productsController")
 /* GET home page. */
 router.get("/genero/:productsGenero", productsController.Mix);
 
-
-
-//router.get("/:sale", productsController.saleMain);
+router.get("/sale/:productsSale", productsController.saleMain);
 
 router.get("/detalle", productsController.detail);
 

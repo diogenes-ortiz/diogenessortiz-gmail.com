@@ -16,11 +16,23 @@ const productsController = {
     },
 
     mujerMain : function(req, res, next) {
+
         res.render("products/mujeres")
     },
 
     saleMain : function(req, res, next) {
-        res.render("products/sale")
+
+        let datajson = fs.readFileSync('./data/products.json');
+        let datajs = JSON.parse(datajson);
+
+        let sale = []
+        datajs.forEach(function (products) {
+            if(products.sale == "si" && products.sale == req.params.productsSale) {
+                sale.push(products)
+            }
+        });
+
+        res.render("products/sale", {sale : sale, nombreTitulo : req.params.productsSale })
     },
 
     detail : function(req, res, next) {

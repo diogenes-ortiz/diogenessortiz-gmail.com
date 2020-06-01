@@ -55,5 +55,20 @@
         "categoria": "Abrigos",
         "genero": "mujer",
         "sale": "no"
+    },
+    {
+        "foto": "/images/Remera.jpg",
+        "nombre": "Remera gris 09",
+        "precio": "2.200",
+        "talles": [
+            "XL",
+            "L",
+            "M",
+            "S",
+            "XS"
+        ],
+        "categoria": "Remeras",
+        "genero": "hombre",
+        "sale": "si"
     }
 ]

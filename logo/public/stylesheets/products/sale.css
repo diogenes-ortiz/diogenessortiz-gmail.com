@@ -37,9 +37,10 @@ select {
     border: black 2px inset;
 }
 
-h2 {
-    margin-top: 10px;
-    margin-left: 5%;
+h2  {
+    margin-top: 10px!important;
+    margin-left: 5%!important;
+    color: red !important;
 }
 
 .fotitos {
