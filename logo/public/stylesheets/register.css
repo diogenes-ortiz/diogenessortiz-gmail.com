@@ -229,3 +229,13 @@ body{
 
       }
     }
+    h3 {
+
+      font-size: 10px;
+
+  }
+
+.ERROR{
+    text-align: center;
+    color: red;
+}

@@ -13,7 +13,7 @@
     <title>Document</title>
 </head>
 <body>
-  <%- include("./partials/header") %>
+
 
 
 
@@ -27,6 +27,17 @@
               </svg> </a></div>
             <div class='crearcuenta col-12'><h2> CREAR CUENTA</h2></div>
             <div class = 'descripcion col-12'><h4>Vuelvete un miembro - disfrutaras de ofertas exlusivas, invitaciones y premios.</h4></div>
+            <% if (typeof errors != 'undefined') {%>
+              <h3 class =' col-12 ERROR'>ERROR !</h3>
+              <ul>
+                  <% for (let i = 0; i < errors.length; i++){ %>
+                      <li>
+                          <%=errors[i].msg %>
+                      </li>
+
+                  <% } %>
+              </ul>
+              <% } %>
     <form method = "POST" action = '/users/register/'>
         <label class = 'offset-1 col-10 offset-1'><h3>Nombre</h3></label>
         <input class = 'offset-1 col-10 offset-1'type='text' name='name'>
