@@ -7,6 +7,8 @@ router.get("/genero/:productsGenero", productsController.Mix);
 
 router.get("/sale/:productsSale", productsController.saleMain);
 
+router.get("/categoria/:productsCategory", productsController.category);
+
 router.get("/detalle", productsController.detail);
 
 router.get("/detalleM", productsController.detailM);

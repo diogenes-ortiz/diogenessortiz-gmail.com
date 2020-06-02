@@ -65,6 +65,10 @@ ul {
     padding-inline-start: 5px;
 }
 
+.subs {
+    color: black !important;
+}
+
 .menuInside {
     margin-top: 15px;
 }
