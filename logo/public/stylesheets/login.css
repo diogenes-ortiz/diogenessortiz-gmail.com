@@ -89,6 +89,7 @@ body{
     
     .contenedor {
         color: black;
+        background-color:  rgb(194, 185, 185)!important;
       }
       .nav-li{
         display: inline-block;
@@ -246,3 +247,13 @@ body{
  .contenedor{
    margin-bottom:10%;
  }
+ h3 {
+
+  font-size: 10px;
+
+}
+
+.ERROR{
+text-align: center;
+color: red;
+}

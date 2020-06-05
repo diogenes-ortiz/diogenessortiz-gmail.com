@@ -41,9 +41,19 @@ const mainController = {
         res.render('login');
     },
     sendlogin: function(req,res, next){
-
-                res.redirect('/')
-            }
+        let errors = validationResult(req);
+        if(errors.isEmpty()) {
+        usuario = {
+            email: req.body.email,
+            contrasena: req.body.password
+        }
+        let usersJSON = fs.readFileSync('./data/usuarios.json',{encoding:'utf-8'})
+        usersJS = JSON.parse(usersJSON);
+        res.redirect('/')
+        } else{
+            res.render('login', {errors:errors.errors})
+        }
+   }
 }
 
 module.exports=mainController
