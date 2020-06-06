@@ -3,14 +3,13 @@ var router = express.Router();
 var productsController = require("../controllers/productsController")
 
 /* GET home page. */
-router.get("/genero/:productsGenero", productsController.Mix);
+router.get("/detalle/:productsId", productsController.detail);
+
+router.get("/genero/:productsGenero", productsController.mix);
 
 router.get("/sale/:productsSale", productsController.saleMain);
 
 router.get("/categoria/:productsCategory", productsController.category);
 
-router.get("/detalle", productsController.detail);
 
-router.get("/detalleM", productsController.detailM);
-
-module.exports = router;
+module.exports =  router;

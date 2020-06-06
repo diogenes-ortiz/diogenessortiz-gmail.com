@@ -9,6 +9,9 @@
 </head>
 <body>
     <%- include("../partials/header") %>
+    <% productsId.forEach (function(detail){ %>
+
+    
     <div class="container-fluid">
         <div class="row">
         <section class="col-xs-12 col-md-5 col-lg-6">
@@ -16,20 +19,20 @@
             <section class= "contMini col-xs-2 col-2 offset-1">
                 <div class="row">
                 <section class="col-xs-2 col-lg-10">
-                    <img class="mini" src="/images/mujer2 detalle 2.jpg" alt="">
+                    <img class="mini" src= <%=detail.foto%> alt="">
                 </section>
                 <section class="col-xs-2 col-lg-10">
-                    <img class="mini" src="/images/mujer 2 detalle 1.jpg" alt="">
+                    <img class="mini" src=<%=detail.foto%> alt="">
                 </section>
                 <section class="col-xs-2 col-lg-10">
-                    <img class="mini" src="/images/mujer2 detalle 3.jpg" alt="">
+                    <img class="mini" src=<%=detail.foto%> alt="">
                 </section>
                 </div>
             </section>
             <section class="contFotito col-xs-2 col-md-9 col-lg-9">
             <div class="row">
                 
-                <img class="fotito col-xs-2 col-lg-8" src="/images/mujer2.jpg" alt="Campera">
+                <img class="fotito col-xs-2 col-lg-8" src= <%=detail.foto%> alt="Campera">
             </div>
             </section>
             </div>
@@ -37,17 +40,16 @@
             <section class="partes col-xs-12 col-lg-6">
                 <div class="row">
                 <article class="col-12">
-                    <h2>Campera militar</h2>
+                    <h2><%=detail.nombre %></h2>
                 </article>
-                <article class="precio col-12">$13.000</article>
+                <article class="precio col-12">$<%=detail.precio%></article>
                 <article class="talle col-12">TALLE</article>
                 <article class="col-12">
                     <ul>
-                        <strong><li>XL</li></strong>
-                        <strong><li>L</li></strong>
-                        <strong><li>M</li></strong>
-                        <strong><li>S</li></strong>
-                        <strong><li>XS</li></strong>
+                        <% detail.talles.forEach(function(talle){ %>
+                            <strong><li><%=talle%></li></strong>
+                       <% })%>
+                        
                     </ul>
                 </article>
                 <div class="col-12">
@@ -68,7 +70,7 @@
                     </button>
             </div>
                 </div>
-
+                <p></p>
                 <div class="col-12">
                     <article class="comprar col-6">
                         <form action="/products" method="GET">
@@ -84,6 +86,7 @@
             </section>
         </div>
     </div>
+<% }) %>
 </body>
 </html>
 

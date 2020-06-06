@@ -10,7 +10,10 @@ const administController = {
         res.render("administ");
     },
     cargar : function(req, res) {
+        let n = products.length;
+        let pdtoId = products[n-1].id;
         let products =  {
+            id : pdtoId+1,
             foto : req.body.foto,
             nombre : req.body.producto,
             precio : req.body.precio,
@@ -19,21 +22,13 @@ const administController = {
             genero : req.body.sexo,
             sale : req.body.sale
         }
-
         let datajson = fs.readFileSync('./data/products.json');
         let datajs = JSON.parse(datajson);
         datajs.push(products);
         datajson = JSON.stringify(datajs, null, 4)
         fs.writeFileSync("./data/products.json", datajson);
-
         res.redirect("/administrador/");
-
     },
-
-    editVista : function(req, res, next) {
-
-    },
-
     edit : function(req, res, next) {
         let idProduct = req.params.idProduct;
 

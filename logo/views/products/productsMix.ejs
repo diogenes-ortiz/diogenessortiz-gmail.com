@@ -58,8 +58,8 @@
                             <select class="precio col-xs-4 col-lg-5" name="Precio" id="">
                                 <option value="Nada">Precio</option>
                                 <option value="10.000">Mayor a 10.000</option>
-                                <option value="5.000">De 10.000 a 5.000</option>
-                                <option value="5.000-1.000">De 5.000 a 1.000</option>
+                                <option value="5.000">De 5.000 a 10.000</option>
+                                <option value="5.000-1.000">De 1.000 a 4.999</option>
                                 <option value="-1.000">Menor a 1.000</option>
                                 <option value="Sale">Ofertas</option>
                             </select>
@@ -83,7 +83,7 @@
 
                 <div class="row">
                     <section class="col-12">
-                        <h2><%=nombreGenero.toUpperCase();%></h2>
+                        <h2><%=nombreGenero%></h2>
                     </section>
     
                 </div>
@@ -92,7 +92,7 @@
                     <% for(let i = 0; i < genero.length; i++) { %>
                     <section class="cajaP col-xs-10 col-sm-5 col-lg-3">
                         <section class="col-12">
-                            <a href="/products/detalle"><img class="fotitos" src= <%= genero[i].foto %> alt="Campera"></a>
+                            <a href="/products/detalle/<%=genero[i].id%>"><img class="fotitos" src= <%= genero[i].foto %> alt="Campera"></a>
                         </section>
                         <section class="nombreP col-12">
                             <%= genero[i].nombre%>
