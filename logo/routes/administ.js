@@ -5,7 +5,10 @@ var administController = require("../controllers/administController");
 
 router.get('/', administController.main);
 router.post('/', administController.cargar);
-router.put("/edit", administController.edit);
 
+router.get("/edit/:productId", administController.edit);
+router.put("/edit/:productId", administController.update);
+
+router.delete('/delete/:productId', administController.destroy);
 
 module.exports = router;
