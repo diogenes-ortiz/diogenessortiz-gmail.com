@@ -15,3 +15,10 @@ https://www.hollisterco.com/shop/wd-es
 
 Abercrombie:
 https://www.abercrombie.com/shop/wd-es
+
+
+Plataforma del tablero de trabajo:
+Trello.
+
+Enlace al tablero de trabajo:
+https://trello.com/b/oc8nT36p
