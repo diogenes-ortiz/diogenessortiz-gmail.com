@@ -1,80 +1,84 @@
 [
     {
         "id": 1,
-        "foto": "/images/Camisa.jpg",
-        "nombre": "Camisa",
-        "precio": "2.200",
-        "talles": [
+        "name": "Camisa",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate perferendis facere quae distinctio obcaecati, esse a iusto fugit debitis aspernatur beatae sit atque ex saepe quibusdam quisquam commodi temporibus consequatur.",
+        "image": "/images/Camisa.jpg",
+        "category": "Camisas",
+        "sizes": [
             "XL",
             "L",
             "M",
             "S",
             "XS"
         ],
-        "categoria": "Camisas",
-        "genero": "hombre",
+        "gender": "hombre",
+        "price": "2.200",
         "sale": "no"
     },
     {
         "id": 2,
-        "foto": "/images/Mujer1.jpg",
-        "nombre": "Vestido animal print",
-        "precio": "5.000",
-        "talles": [
+        "name": "Vestido animal print",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate perferendis facere quae distinctio obcaecati, esse a iusto fugit debitis aspernatur beatae sit atque ex saepe quibusdam quisquam commodi temporibus consequatur.",
+        "image": "/images/Mujer1.jpg",
+        "category": "Vestidos",
+        "sizes": [
             "XL",
             "L",
             "XS"
         ],
-        "categoria": "Vestidos",
-        "genero": "mujer",
+        "gender": "mujer",
+        "price": "2.200",
         "sale": "no"
     },
     {
         "id": 3,
-        "foto": "/images/Mujer2.jpg",
-        "nombre": "Campera militar",
-        "precio": "13.000",
-        "talles": [
+        "name": "Campera militar",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate perferendis facere quae distinctio obcaecati, esse a iusto fugit debitis aspernatur beatae sit atque ex saepe quibusdam quisquam commodi temporibus consequatur.",
+        "image": "/images/Mujer2.jpg",
+        "category": "Abrigos",
+        "sizes": [
             "XL",
             "L",
             "M",
             "XS"
         ],
-        "categoria": "Abrigos",
-        "genero": "mujer",
+        "gender": "mujer",
+        "price": "2.200",
         "sale": "no"
     },
     {
         "id": 4,
-        "foto": "/images/Mujer3.jpg",
-        "nombre": "Cardigan",
-        "precio": "25.000",
-        "talles": [
+        "name": "Cardigan",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate perferendis facere quae distinctio obcaecati, esse a iusto fugit debitis aspernatur beatae sit atque ex saepe quibusdam quisquam commodi temporibus consequatur.",
+        "image": "/images/Mujer3.jpg",
+        "category": "Abrigos",
+        "sizes": [
             "XL",
             "L",
             "M",
             "S",
             "XS"
         ],
-        "categoria": "Abrigos",
-        "genero": "mujer",
+        "gender": "mujer",
+        "price": "2.200",
         "sale": "no"
     },
     {
         "id": 5,
-        "foto": "/images/Remera.jpg",
-        "nombre": "Remera gris 09",
-        "precio": "2.200",
-        "talles": [
+        "name": "Remera gris 09",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate perferendis facere quae distinctio obcaecati, esse a iusto fugit debitis aspernatur beatae sit atque ex saepe quibusdam quisquam commodi temporibus consequatur.",
+        "image": "/images/Remera.jpg",
+        "category": "Remeras",
+        "sizes": [
             "XL",
             "L",
             "M",
             "S",
             "XS"
         ],
-        "categoria": "Remeras",
-        "genero": "hombre",
+        "gender": "hombre",
+        "price": "2.200",
         "sale": "si"
     }
-    
 ]
