@@ -1,18 +1,32 @@
 let fs = require('fs')
 var express = require('express');
 var router = express.Router();
+let bcrypt = require('bcrypt');
+let multer = require('multer');
 var mainController = require('../controllers/mainController');
 let logDBMiddleWare = require('../middlewares/logDBMiddleWare')
 let { check, validationResult, body } = require ('express-validator')
+let path = require('path')
+
+var storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+      cb(null, 'tmp/my-uploads')
+    },
+    filename: function (req, file, cb) {
+      cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
+    }
+  })
+   
+  var upload = multer({ storage: storage })
 
 /* GET home page. */
 router.get('/', mainController.home);
 router.get('/register', mainController.register);
-router.post('/register',logDBMiddleWare ,[
-    check ('name').isLength({min:1}).withMessage('Es necesario ingresar un nombre'),
-    check('secondname').isLength({min:1}).withMessage('Es necesario ingresar un apellido'),
+router.post('/register', upload.any(),logDBMiddleWare ,[
+    check ('first_name').isLength({min:1}).withMessage('Es necesario ingresar un nombre'),
+    check('last_name').isLength({min:1}).withMessage('Es necesario ingresar un apellido'),
     check('email').isEmail().withMessage('Email invalido').custom(value => {
-        let usuariosJSON = fs.readFileSync('./data/usuarios.json', { encoding: 'utf-8'});
+        let usuariosJSON = fs.readFileSync('./data/users.json', { encoding: 'utf-8'});
         let usuarios = JSON.parse(usuariosJSON);
         for (const users of usuarios) {
             //console.log solo para chequear si efectivamente me está mostrando el mail con el quiero comparar y ver si se repite o no.
@@ -31,7 +45,7 @@ router.post('/register',logDBMiddleWare ,[
 router.get('/login', mainController.login);
 router.post('/login',logDBMiddleWare,[
     check('email').isEmail().withMessage('Email o contraseña invalida').custom(value => {
-        let usuariosJSON = fs.readFileSync('./data/usuarios.json', { encoding: 'utf-8'});
+        let usuariosJSON = fs.readFileSync('./data/users.json', { encoding: 'utf-8'});
         let usuarios = JSON.parse(usuariosJSON);
         for (const users of usuarios) {
             console.log(value);
@@ -44,13 +58,13 @@ router.post('/login',logDBMiddleWare,[
 		return false;
     }),
     check('password').isLength({min:7}).custom(value => {
-        let usuariosJSON = fs.readFileSync('./data/usuarios.json', { encoding: 'utf-8'});
+        let usuariosJSON = fs.readFileSync('./data/users.json', { encoding: 'utf-8'});
         let usuarios = JSON.parse(usuariosJSON);
         for (const users of usuarios) {
           
             console.log(value);
             
-            if(users.contrasena === value){
+            if(bcrypt.compareSync(value, users.password)){
                 
                 console.log('contraseña incorrecta');
                
