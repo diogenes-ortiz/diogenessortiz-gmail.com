@@ -21,16 +21,17 @@ const mainController = {
     sendregister: function(req,res,next){
         let errors = validationResult(req);
         let usuarios = fs.readFileSync('./data/users.json', {encoding:'utf-8'});
+        
         let n = usuarios.length;
-        let userId = usuarios[n-1].id;
+        let userId = usuarios.length+1;
         if(errors.isEmpty()) {
         usuario = {
-            id:userId+1,
+            id:userId,
             email: req.body.email,
             first_name: req.body.first_name,
             last_name: req.body.last_name,
             password: bcrypt.hashSync(req.body.password, 10),
-            avatar: req.files[0].filename,
+            image: req.files[0].filename,
             category: req.body.category
         }
 
