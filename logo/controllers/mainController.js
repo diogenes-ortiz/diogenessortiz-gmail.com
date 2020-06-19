@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+let bcrypt = require('bcrypt')
 let { check, validationResult, body } = require ('express-validator')
 
 const mainController = {
@@ -19,18 +20,26 @@ const mainController = {
     },
     sendregister: function(req,res,next){
         let errors = validationResult(req);
+
+        let usuarios = JSON.parse(fs.readFileSync('./data/users.json', {encoding:'utf-8'}));
+        
+        let n = usuarios.length;
+        let userId = usuarios[n-1].id;
         if(errors.isEmpty()) {
-        usuario ={
+        usuario = {
+            id:userId + 1,
             email: req.body.email,
-            nombre: req.body.name,
-            apellido: req.body.secondname,
-            contrasena: req.body.password,
+            first_name: req.body.first_name,
+            last_name: req.body.last_name,
+            password: bcrypt.hashSync(req.body.password, 10),
+            image: req.files[0].filename,
+            category: req.body.category
         }
 
-        let usersJSON = fs.readFileSync('./data/usuarios.json', {encoding:'utf-8'});
+        let usersJSON = fs.readFileSync('./data/users.json', {encoding:'utf-8'});
         usersJS = JSON.parse(usersJSON);
         usersJS.push(usuario)
-        usersJSON = JSON.stringify(usersJS);
+        usersJSON = JSON.stringify(usersJS, null, 4);
         fs.writeFileSync('./data/users.json', usersJSON);
                 res.redirect('/')
          } else{
@@ -46,7 +55,10 @@ const mainController = {
         usersJS = JSON.parse(usersJSON);
         let userLog;
         usersJS.forEach((users) => {
-            if(users.email == req.body.email && users.password == req.body.password) {
+            console.log(users.password)
+            let check = bcrypt.compareSync(users.password, req.body.password);
+            console.log(check);
+            if(users.email == req.body.email && check == true) {
                     userLog = users; 
                     req.session.userLog = userLog;
                     console.log(req.session.userLog)
@@ -57,6 +69,7 @@ const mainController = {
             }
 
         });
+        console.log(users.password)
 
         if(userLog == undefined) {
             return res.render('login', {errors : [
@@ -69,16 +82,14 @@ const mainController = {
         /*if(errors.isEmpty()) {
         usuario = {
             email: req.body.email,
-            contrasena: req.body.password
+            password: req.body.password
         }
         res.redirect('/')
         } else {
             res.render('login', {errors:errors.errors})
         }*/
-   }, 
-   header : function(req, res, next) {
-
    }
+
 
 }
 
