@@ -20,13 +20,14 @@ const mainController = {
     },
     sendregister: function(req,res,next){
         let errors = validationResult(req);
-        let usuarios = fs.readFileSync('./data/users.json', {encoding:'utf-8'});
+
+        let usuarios = JSON.parse(fs.readFileSync('./data/users.json', {encoding:'utf-8'}));
         
         let n = usuarios.length;
-        let userId = usuarios.length+1;
+        let userId = usuarios[n-1].id;
         if(errors.isEmpty()) {
         usuario = {
-            id:userId,
+            id:userId + 1,
             email: req.body.email,
             first_name: req.body.first_name,
             last_name: req.body.last_name,
@@ -38,7 +39,7 @@ const mainController = {
         let usersJSON = fs.readFileSync('./data/users.json', {encoding:'utf-8'});
         usersJS = JSON.parse(usersJSON);
         usersJS.push(usuario)
-        usersJSON = JSON.stringify(usersJS);
+        usersJSON = JSON.stringify(usersJS, null, 4);
         fs.writeFileSync('./data/users.json', usersJSON);
                 res.redirect('/')
          } else{
