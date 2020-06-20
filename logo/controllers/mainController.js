@@ -56,7 +56,7 @@ const mainController = {
         let userLog;
         usersJS.forEach((users) => {
             console.log(users.password)
-            let check = bcrypt.compareSync(users.password, req.body.password);
+            let check = bcrypt.compareSync(req.body.password, users.password);
             console.log(check);
             if(users.email == req.body.email && check == true) {
                     userLog = users; 
