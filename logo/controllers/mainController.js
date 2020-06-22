@@ -51,44 +51,42 @@ const mainController = {
     },
     sendlogin: function(req,res, next){
         let errors = validationResult(req);
-        let usersJSON = fs.readFileSync('./data/users.json',{encoding:'utf-8'})
-        usersJS = JSON.parse(usersJSON);
-        let userLog;
-        usersJS.forEach((users) => {
-            console.log(users.password)
-            let check = bcrypt.compareSync(req.body.password, users.password);
-            console.log(check);
-            if(users.email == req.body.email && check == true) {
-                    userLog = users; 
-                    req.session.userLog = userLog;
-                    console.log(req.session.userLog)
-                    console.log(userLog)
-                    res.locals.userLog = userLog;
-                    console.log(res.locals.userLog)
-                    res.redirect('/')
+        //verifico si hay errores
+        if(errors.isEmpty()) { // si NO hay errores
+            let usersJSON = fs.readFileSync('./data/users.json', { encoding: 'utf-8'});
+            let users;
+            if (usersJSON == "") {
+                users = [];
+            } else {
+                users = JSON.parse(usersJSON);
             }
-
-        });
-        console.log(users.password)
-
-        if(userLog == undefined) {
-            return res.render('login', {errors : [
-                {msj : "Contraseña o email invalido"}
-            ]});
+            let usuarioALoguearse;
+    
+            for (let i = 0; i < users.length; i++) {
+                if (users[i].email == req.body.email) {  // si mail encontrado
+                    if (bcrypt.compareSync(req.body.password, users[i].password)) { // si pass encontrada
+                        usuarioALoguearse = users[i]; //encontre usuario a loguearse
+                        break;
+                    }
+                }
+            }
+            if(usuarioALoguearse == undefined) { //si NO se encontro a usuario
+                return res.render('login', {errors: [
+                    {msg: 'Credenciales inválidas'}
+                ]});
+            }
+            //guardar el usuario encontrado en session
+            req.session.usuarioLogueado = usuarioALoguearse;
+    
+            if (req.body.recordame != undefined) {
+                res.cookie('recordame', usuarioALoguearse.email, { maxAge: 86400000 });
+            }
+            //Usuario logueado
+            return res.redirect('/');
+        } else { //si hay errores
+            return res.render('login', {errors: errors.errors});
         }
-
-        
-
-        /*if(errors.isEmpty()) {
-        usuario = {
-            email: req.body.email,
-            password: req.body.password
-        }
-        res.redirect('/')
-        } else {
-            res.render('login', {errors:errors.errors})
-        }*/
-   }
+    }
 
 
 }

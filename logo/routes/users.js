@@ -4,7 +4,7 @@ var router = express.Router();
 let bcrypt = require('bcrypt');
 let multer = require('multer');
 var mainController = require('../controllers/mainController');
-let logDBMiddleWare = require('../middlewares/logDBMiddleWare')
+//let logDBMiddleWare = require('../middlewares/logDBMiddleWare')
 let { check, validationResult, body } = require ('express-validator')
 let path = require('path')
 
@@ -22,7 +22,7 @@ var storage = multer.diskStorage({
 /* GET home page. */
 router.get('/', mainController.home);
 router.get('/register', mainController.register);
-router.post('/register', upload.any(),logDBMiddleWare ,[
+router.post('/register', upload.any(), /*logDBMiddleWare,*/ [
     check ('first_name').isLength({min:1}).withMessage('Es necesario ingresar un nombre'),
     check('last_name').isLength({min:1}).withMessage('Es necesario ingresar un apellido'),
     check('email').isEmail().withMessage('Email invalido').custom(value => {
@@ -43,7 +43,7 @@ router.post('/register', upload.any(),logDBMiddleWare ,[
 ] ,mainController.sendregister);
 
 router.get('/login', mainController.login);
-router.post('/login',logDBMiddleWare,[
+router.post('/login', /*logDBMiddleWare,*/ [
     check('email').isEmail().withMessage('Email o contraseña invalida').custom(value => {
         let usuariosJSON = fs.readFileSync('./data/users.json', { encoding: 'utf-8'});
         let usuarios = JSON.parse(usuariosJSON);
@@ -74,4 +74,5 @@ router.post('/login',logDBMiddleWare,[
 		return false;
     }),
 ],mainController.sendlogin);
+
 module.exports = router;
