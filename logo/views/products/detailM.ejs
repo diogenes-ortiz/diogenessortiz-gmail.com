@@ -19,20 +19,20 @@
             <section class= "contMini col-xs-2 col-2 offset-1">
                 <div class="row">
                 <section class="col-xs-2 col-lg-10">
-                    <img class="mini" src= <%=detail.foto%> alt="">
+                    <img class="mini" src= <%= detail.image %> alt="">
                 </section>
                 <section class="col-xs-2 col-lg-10">
-                    <img class="mini" src=<%=detail.foto%> alt="">
+                    <img class="mini" src=<%= detail.image %> alt="">
                 </section>
                 <section class="col-xs-2 col-lg-10">
-                    <img class="mini" src=<%=detail.foto%> alt="">
+                    <img class="mini" src=<%= detail.image %> alt="">
                 </section>
                 </div>
             </section>
             <section class="contFotito col-xs-2 col-md-9 col-lg-9">
             <div class="row">
                 
-                <img class="fotito col-xs-2 col-lg-8" src= <%=detail.foto%> alt="Campera">
+                <img class="fotito col-xs-2 col-lg-8" src= <%= detail.image %> alt="Campera">
             </div>
             </section>
             </div>
@@ -40,15 +40,15 @@
             <section class="partes col-xs-12 col-lg-6">
                 <div class="row">
                 <article class="col-12">
-                    <h2><%=detail.nombre %></h2>
+                    <h2><%= detail.name %></h2>
                 </article>
-                <article class="precio col-12">$<%=detail.precio%></article>
+                <article class="precio col-12">$<%= detail.price %></article>
                 <article class="talle col-12">TALLE</article>
                 <article class="col-12">
                     <ul>
-                        <% detail.talles.forEach(function(talle){ %>
-                            <strong><li><%=talle%></li></strong>
-                       <% })%>
+                        <% detail.sizes.forEach(function(talle) { %>
+                            <strong><li><%= talle %></li></strong>
+                       <% } %>
                         
                     </ul>
                 </article>
@@ -86,7 +86,6 @@
             </section>
         </div>
     </div>
-<% }) %>
 </body>
 </html>
 

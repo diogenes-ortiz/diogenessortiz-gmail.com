@@ -7,7 +7,7 @@ const productsController = {
 
         let genero = []
 		datajs.forEach(function (product) {
-			if (product.genero == req.params.productsGenero) {
+			if (product.gender == req.params.productsGenero) {
 				genero.push(product)
 			}
 		})
@@ -38,7 +38,7 @@ const productsController = {
         let genero = []
 
         datajs.forEach(function (products) {
-            if(products.categoria == req.params.productsCategory) {
+            if(products.category == req.params.productsCategory) {
                 genero.push(products);
             }
         })
@@ -72,10 +72,6 @@ const productsController = {
             }
         })
 */
-    }
-    
-
-
-
+}
 
 module.exports = productsController
