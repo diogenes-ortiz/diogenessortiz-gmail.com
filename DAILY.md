@@ -10,13 +10,15 @@ Grupo de WhatsApp
 Metodología: 
 
 Todos los días los integrantes del grupo tenian que responder 3 preguntas:
+
 DAILY STANDUP
-1)_ ¿Qué hizo ayer?
-2)_ ¿Se encontró con algún impedimento?
-3)_ ¿Qué va a hacer hoy?
+
+1. ¿Qué hizo ayer?
+2. ¿Se encontró con algún impedimento?
+3. ¿Qué va a hacer hoy?
 
 
 Resultados: 
 
-Se implementó pocos días antes de la finalización del Sprint 3.
-En ese corto tiempo, permitió tener un rápido panorama del estado diario de cada parte del proyecto. Asi mismo, en ciertas ocaciones, los inconvenientes o impedimentos presentados como respuesta de la segunda pregunta encontaron una solución a traves de la mirada de otro de los ingrantes del grupo.
+Todos los integrantes del grupo estan satisfechos con la implementación del daily. La única discrepancia encontrada hace referencia a cuando realizar el daily. La mitad del equipo estaba de acuerdo con la consulta diaria, la otra mitad no.
+Se decidió adaptar el daily a los tiempos de trabajo del grupo, asi que quedó algo intermedio entre un daily y un weekly, quizás un occasionally o in between days.
