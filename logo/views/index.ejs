@@ -8,11 +8,30 @@
 <body>
 
   <%- include("./partials/header") %>
-        
+
+  <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active" data-interval="10000">
+        <img src="/images/carrousel.jpg" class="d-block w-100" style="max-width: 900px; max-height: 800px; margin:auto" alt="...">
+      </div>
+      <div class="carousel-item" data-interval="2000">
+        <img src="/images/Descuentos.png" class="d-block w-100" style="max-width: 900px; max-height: 800px; margin: auto;" alt="...">
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+      
         <div class = 'newarrivals container-fluid'>
           <div class='  row'>
             <div class='col-12'>
-              <h3 class='New-Arrivals'>NUEVA TEMPORADA</h3>
+              <h3 class='New-Arrivals'><strong>INVIERNO 2020</strong></h3>
             </div>
         
          
