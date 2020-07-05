@@ -73,4 +73,6 @@ router.post('/login', /*logDBMiddleWare,*/ [
     }),
 ], mainController.sendlogin);
 
+router.get("/info", mainController.infoUser);
+
 module.exports = router;

@@ -86,6 +86,9 @@ const mainController = {
         } else { //si hay errores
             return res.render('login', {errors: errors.errors});
         }
+    },
+    infoUser : function(req, res, next) {
+        res.render("users")
     }
 
 

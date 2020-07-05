@@ -199,6 +199,64 @@ body {
 div.botonera-izquierda-logo.col-1{
   top:5px;
 }
+.carru {
+  margin-top: 2%;
+}
+.cajahym {
+  width: 100%;
+  padding: 2.5% !important;
+  padding-bottom: 1% !important;
+  margin-bottom: 1%
+}
+.imghym {
+  width: 84% !important;  
+  border: black 3px solid;
+  padding: 0% !important;
+}
+.imghym:hover {
+  filter: grayscale(100%);
+  border: black 6px inset;
+}
+.imgH {
+  margin-left: 28%;
+}
+.imgM {
+  margin-left: 6%;
+}
+.cajaSale {
+  margin-bottom: 2%;
+}
+.imgSale {
+  width: 100% !important;
+  /*position: relative;
+  left: 69px;
+  bottom: 20px;*/
+  margin-left: 50.8% !important;
+  border: black 3px solid;
+}
+.imgSale:hover {
+  filter: grayscale(50%);
+  border: black 6px solid;
+}
+.titleH {
+  position: relative;
+  top: 270px;
+  z-index: 100;
+  color: white;
+}
+.titleM {
+  position: relative;
+  top: 270px;
+  z-index: 100;
+  color: white;
+}
+.titleSale {
+  position: relative;
+  right: 25px ;
+  top: 100px;
+  z-index: 100;
+
+}
   @media only screen and (max-width: 700px) {
     .barrabuscadora {
       display: none;
