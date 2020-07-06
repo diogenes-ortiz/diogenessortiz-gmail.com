@@ -11,22 +11,25 @@ ul li {
     display: inline-block;
     margin-right: 20px;
     font-size: 20px;
+    color: black ;
 }
 
 ul {
     padding-left: 0px;
-    margin-left: 0px;
+    margin-left: 10%;
     margin-bottom: 30px;
 }
 
 .circulo {
-    background-color: grey;
-    width: 50px;
-    display: inline-block;
-    border-radius: 100%;
-    border: black 1px solid;
-    margin-bottom: 30px;
-    margin-right: 10px;
+    color: grey;
+    margin-left: 10% !important;
+}
+.circulo2 {
+    color: green;
+}
+
+.circulos:hover {
+    border: 2px solid black;
 }
 
 .circulo2 {
@@ -47,19 +50,22 @@ ul {
 
 .barrita {
     display: inline-block;
+    color: black !important;
 }
 
 h2 {
-    margin-top: 30%;
-    margin-bottom: 40px;
-    margin-left: 10px;
+    margin-top: 3% !important;
+    margin-bottom: 40px !important;
+    margin-left: 10% !important;
     font-size: 40px;
+    color: black !important;
 }
 
 .precio {
     font-size: 25px;
     margin-top: 10px;
     margin-bottom: 30px;
+    margin-left: 10%;
     color: gray;
 
 }
@@ -67,6 +73,8 @@ h2 {
 .talle {
     font-size: 20px;
     margin-bottom: 10px;
+    margin-left: 10%;
+    color: black;
 }
 
 .comprarB {
@@ -75,10 +83,13 @@ h2 {
     color: white;
     border: 2px solid grey;
     border-radius: 5%;
+    margin-left: 10%;
 }
 
 .comprarB:hover {
-    border: 2px solid white;
+    font-size: 110%;
+    background-color: lightslategrey;
+    border: 1px solid lightslategrey;
         
 }
 
@@ -93,31 +104,43 @@ h2 {
 
 .comprar {
     padding-left: 0px;
+    margin-left: 5%;
 }
 
 .partes {
-    background-color: lightcoral;
+    background-color: whitesmoke;
     padding-left: 10%;
+    border-left: 3px black solid;
     color: white;
+    box-shadow: -12px 0px 10px -2px rgba(0,0,0,0.92);   
 }
 
 .addTo {
-    background-color: lightcoral;
-    color: white;
-    border: lightcoral 0.3px solid;
+    background-color: whitesmoke;
+    color: black;
+    border: whitesmoke 0.3px solid;
     margin-bottom: 5%;
     padding: 0%;
-    margin-top: 28.5%;
+    margin-top: 15.5%;
     margin-left: 3.5%;
+}
+
+.addCora {
+    margin-left: 10%;
+}
+
+.bolsa {
+    margin-bottom: 5%;
 }
 
 .addTo:hover {
-    color: black;
+    color: rgb(192, 77, 77);
 }
 
 .cora {
-    margin-top: 28%;
+    margin-top: 15%;
     margin-left: 3.5%;
+    color: black;
 }
 
 
@@ -130,6 +153,7 @@ h2 {
     .mini {
         width: 100%;
         margin: 0%;
+        margin-top: 20%;
         margin-bottom: 5%;
     }
 
@@ -139,7 +163,7 @@ h2 {
     }
 
     .contFotito {
-        padding: 0%;
-        margin: 0%;
+        padding: 0% !important;
+        margin: 0% !important;
     }
 }
