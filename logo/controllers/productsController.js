@@ -1,4 +1,6 @@
 const fs = require('fs');
+const db = requiere('../database/models');
+const {Op} = require('sequelize');
 
 const productsController = {
     mix : function(req, res, next) {
