@@ -1,24 +1,25 @@
 
-DAILY STANDUP
+**DAILY STANDUP**
 
 
-Tecnología: 
+**TecnologÃ­a**: 
 
 Grupo de WhatsApp
 
 
-Metodología: 
+**MetodologÃ­a**: 
 
-Todos los días los integrantes del grupo tenian que responder 3 preguntas:
+Todos los dÃ­as los integrantes del grupo tenian que responder 3 preguntas:
 
 DAILY STANDUP
 
-1. ¿Qué hizo ayer?
-2. ¿Se encontró con algún impedimento?
-3. ¿Qué va a hacer hoy?
+1. Â¿QuÃ© hizo ayer?
+2. Â¿Se encontrÃ³ con algÃºn impedimento?
+3. Â¿QuÃ© va a hacer hoy?
 
 
-Resultados: 
+**Resultados**: 
 
-Todos los integrantes del grupo estan satisfechos con la implementación del daily. La única discrepancia encontrada hace referencia a cuando realizar el daily. La mitad del equipo estaba de acuerdo con la consulta diaria, la otra mitad no.
-Se decidió adaptar el daily a los tiempos de trabajo del grupo, asi que quedó algo intermedio entre un daily y un weekly, quizás un occasionally o in between days.
+Los integrantes del grupo continuan satisfechos con el nuevo daily.  
+Se sostuvo la nueva implementaciÃ³n del daily, acorde a los tiempos de trabajo del grupo.  
+El daily derivÃ³ en algo intermedio entre un daily y un weekly, quizÃ¡s un occasionally o in between days.
