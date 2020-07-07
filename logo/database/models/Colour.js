@@ -27,8 +27,6 @@ module.exports = function(sequelize, dataTypes) {
             foreignKey: "colour_id",
             otherKey: "product_id",
             timestamps: false
-            //onDelete: "cascade"
-            //onUpdate: "cascade"
         });
     }
 

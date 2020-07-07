@@ -8,7 +8,7 @@ module.exports = function(sequelize, dataTypes) {
 			autoIncrement: true,
 			allowNull: false
 		},
-		name: {
+		gender_name: {
 			type: dataTypes.STRING
 		}
 	};
@@ -20,9 +20,11 @@ module.exports = function(sequelize, dataTypes) {
 
 	let Gender = sequelize.define(alias, cols, config);
 
+	Gender.associate = function(models) {
+		Gender.hasMany(models.Product, {
+			as: "products",
+			foreignKey: "gender_id"
+		})
+	}
 	return Gender;
 }
-/*
-favorite_movie_id: {
-    type: dataTypes.INTEGER
-}*/

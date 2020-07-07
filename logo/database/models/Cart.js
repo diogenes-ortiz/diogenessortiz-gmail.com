@@ -33,8 +33,6 @@ module.exports = function(sequelize, dataTypes) {
             foreignKey: "cart_id",
             otherKey: "product_id",
             timestamps: false
-            //onDelete: "cascade"
-            //onUpdate: "cascade"
         });
     }
 

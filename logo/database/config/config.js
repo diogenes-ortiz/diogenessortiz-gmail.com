@@ -5,7 +5,7 @@ module.exports = {
     "database": "404_db",
     "host": "127.0.0.1",
     "dialect": "mysql",
-    "operatorsAliases": 0
+    "operatorsAliases": false
   },
   "test": {
     "username": "root",
@@ -13,7 +13,7 @@ module.exports = {
     "database": "database_test",
     "host": "127.0.0.1",
     "dialect": "mysql",
-    "operatorsAliases": 0
+    "operatorsAliases": false
   },
   "production": {
     "username": "root",
@@ -21,6 +21,6 @@ module.exports = {
     "database": "database_production",
     "host": "127.0.0.1",
     "dialect": "mysql",
-    "operatorsAliases": 0
+    "operatorsAliases": false
   }
 }

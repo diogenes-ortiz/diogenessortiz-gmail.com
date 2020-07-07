@@ -6,17 +6,29 @@ module.exports = function(sequelize, dataTypes) {
             primaryKey: true,
             autoIncrement: true
         },
-        first_name: {
+        name: {
             type: dataTypes.STRING
         },
-        last_name: {
+        description: {
             type: dataTypes.STRING
         },
-        rating: {
+        category_id: {
+            type: dataTypes.INTEGER
+        },
+        brand_id: {
+            type: dataTypes.INTEGER
+        },
+        colour_id: {
+            type: dataTypes.INTEGER
+        },
+        gender_id: {
+            type: dataTypes.INTEGER
+        },
+        price: {
             type: dataTypes.DOUBLE
         },
-        favorite_movie_id: {
-            type: dataTypes.INTEGER
+        sale: {
+            type: dataTypes.BOOLEAN
         }
 
     }
@@ -24,17 +36,28 @@ module.exports = function(sequelize, dataTypes) {
         tableName: "products",
         timestamps: false
     }
+
     let Product = sequelize.define(alias, cols, config);
 
     Product.associate = function(models) {
+        Product.belongsTo(models.Gender, {
+			as: "gender",
+			foreignKey: "gender_id"
+        });
+        Product.belongsTo(models.Brand, {
+			as: "brand",
+			foreignKey: "brand_id"
+		});
+        Product.hasMany(models.Image, {
+			as: "images",
+			foreignKey: "productid"
+		});
         Product.belongsToMany(models.Cart, {
-            as: "movies",
+            as: "carts",
             through: "cart_product",
             foreignKey: "product_id",
             otherKey: "cart_id",
             timestamps: false
-            //onDelete: "cascade"
-            //onUpdate: "cascade"
         });
         Product.belongsToMany(models.User, {
             as: "users",
@@ -42,8 +65,6 @@ module.exports = function(sequelize, dataTypes) {
             foreignKey: "product_id",
             otherKey: "user_id",
             timestamps: false
-            //onDelete: "cascade"
-            //onUpdate: "cascade"
         });
         Product.belongsToMany(models.Colour, {
             as: "colours",
@@ -51,8 +72,6 @@ module.exports = function(sequelize, dataTypes) {
             foreignKey: "product_id",
             otherKey: "colour_id",
             timestamps: false
-            //onDelete: "cascade"
-            //onUpdate: "cascade"
         });
         Product.belongsToMany(models.Size, {
             as: "sizes",
@@ -60,17 +79,13 @@ module.exports = function(sequelize, dataTypes) {
             foreignKey: "product_id",
             otherKey: "size_id",
             timestamps: false
-            //onDelete: "cascade"
-            //onUpdate: "cascade"
         });
         Product.belongsToMany(models.Category, {
             as: "categories",
-            through: "categoryproduct_user",
+            through: "category_product",
             foreignKey: "product_id",
-            otherKey: "user_id",
+            otherKey: "category_id",
             timestamps: false
-            //onDelete: "cascade"
-            //onUpdate: "cascade"
         });
     }
 

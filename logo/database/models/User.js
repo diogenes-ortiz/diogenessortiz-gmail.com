@@ -18,11 +18,11 @@ module.exports = function(sequelize, dataTypes) {
         password: {
             type: dataTypes.STRING
         },
-        rating: {
-            type: dataTypes.DOUBLE
+        avatar: {
+            type: dataTypes.STRING
         },
-        favorite_movie_id: {
-            type: dataTypes.INTEGER
+        admin: {
+            type: dataTypes.BOOLEAN
         }
 
     }
@@ -39,8 +39,6 @@ module.exports = function(sequelize, dataTypes) {
             foreignKey: "user_id",
             otherKey: "product_id",
             timestamps: false
-            //onDelete: "cascade"
-            //onUpdate: "cascade"
         });
     }
 

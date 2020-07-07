@@ -1,5 +1,5 @@
 const fs = require('fs');
-const db = requiere('../database/models');
+const db = require('../database/models');
 const {Op} = require('sequelize');
 
 const productsController = {

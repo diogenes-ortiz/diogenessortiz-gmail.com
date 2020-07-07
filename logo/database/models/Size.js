@@ -20,15 +20,13 @@ module.exports = function(sequelize, dataTypes) {
 
 	let Size = sequelize.define(alias, cols, config);
 
-	SizeUser.associate = function(models) {
-        SizeUser.belongsToMany(models.Product, {
+	Size.associate = function(models) {
+        Size.belongsToMany(models.Product, {
             as: "products",
             through: "product_size",
             foreignKey: "size_id",
             otherKey: "product_id",
             timestamps: false
-            //onDelete: "cascade"
-            //onUpdate: "cascade"
         });
     }
 

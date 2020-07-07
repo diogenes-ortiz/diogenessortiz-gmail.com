@@ -12,7 +12,7 @@ module.exports = function(sequelize, dataTypes) {
 			type: dataTypes.INTEGER
         },
         price: {
-			type: dataTypes.INTEGER
+			type: dataTypes.DOUBLE
         },
         cart_id: {
             type: dataTypes.INTEGER
