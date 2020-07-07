@@ -1,16 +1,16 @@
 
-RETROSPECTIVA
+**RETROSPECTIVA**
 
 
-Tecnología: 
+**TecnologÃ­a**: 
 
 Tablero de Trello
 
 
-Metodología: 
+**MetodologÃ­a**: 
 
 Retrospectiva Estrella de Mar o Starfish Retrospective.
-Consistió en un intercambio de opiniones e ideas agrupadas en 5 categorias bien definidas: 
+ConsistiÃ³ en un intercambio de opiniones e ideas agrupadas en 5 categorias bien definidas: 
 
 
 1. Dejar de hacer...
@@ -20,14 +20,12 @@ Consistió en un intercambio de opiniones e ideas agrupadas en 5 categorias bien 
 5. Comenzar a hacer...
 
 
-Principales conclusiones:
+**Principales conclusiones**:
 
-- Comenzar a reunirnos inmediatamente después de la presentación del nuevo Sprint por parte de la cátedra.
-- Continuar con la implementación del daily, aunque de manera mas pausada.
-- No dejar la finalización del trabajo para último momento. Esto impide la puesta en marcha de las pruebas que el código requiere.
-- Mantener la fluidez en la comunicación entre los integrantes del grupo.
-- Asistencia permamente entre los propios miembros del grupo.
-- Buena predisposición para escuchar nuevas ideas.
-- Compromiso, respeto, compañerismo, son algunos de los rasgos que caracterizan a los integrantes del grupo y que complementan todo lo vertido en las líneas anterirores.
-
-
+- Comenzar a tener en cuenta las recomendaciones de los docentes respecto del trabajo pendiente.
+- Coemnzar a innovar respecto del diseÃ±o y de la estÃ©tica del E-Commerce.
+- Sostener la reuniÃ³n inmediata despuÃ©s de la presentaciÃ³n del nuevo Sprint por parte de la cÃ¡tedra.
+- Sostener la implementaciÃ³n del daily, aunque de manera mas pausada.
+- Comenzar a no dejar la finalizaciÃ³n del trabajo para Ãºltimo momento. Esto impide la puesta en marcha de las pruebas que el cÃ³digo requiere.
+- Llevar a un nuevo nivel la comunicaciÃ³n entre los integrantes del grupo.
+- Sostener la asistencia permamente entre los propios miembros del grupo.
