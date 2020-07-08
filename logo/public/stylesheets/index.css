@@ -82,7 +82,6 @@ body {
     color: var(--gray);
     cursor: pointer;
   }
-  
   .New-Arrivals{
     text-align: center;
     border-top: solid black 2px;
@@ -298,16 +297,6 @@ div.botonera-izquierda-logo.col-1{
     display: none;
   }
 }
-
-
-
-
-
-
-
-
-
-
   .cajaP {
     border: 3px black inset;
     padding-top: 2%;
@@ -431,4 +420,4 @@ del{
 a.buttons:hover{
   color: white;
   text-decoration: none;
-}
+}}
