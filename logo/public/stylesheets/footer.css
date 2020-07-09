@@ -14,7 +14,6 @@
 section h2 {
     color: black;
     text-align: center;
-
     padding-top: 20px;
 }
 
@@ -24,6 +23,7 @@ section div div {
 
 .redes {
     border: 2px solid black;
+    text-align: center;
 }
 
 .redessociales {
