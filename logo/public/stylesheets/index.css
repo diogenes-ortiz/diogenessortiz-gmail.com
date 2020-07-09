@@ -224,13 +224,18 @@ div.botonera-izquierda-logo.col-1{
 }
 .cajaSale {
   margin-bottom: 2%;
+  text-align: center;
+  display: flex;
 }
+.cajaSale .row {
+  text-align: center;
+}
+
 .imgSale {
-  width: 100% !important;
+  text-align: center;
   /*position: relative;
   left: 69px;
   bottom: 20px;*/
-  margin-left: 50.8% !important;
   border: black 3px solid;
 }
 .imgSale:hover {
