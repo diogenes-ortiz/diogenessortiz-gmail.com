@@ -82,7 +82,6 @@ body {
     color: var(--gray);
     cursor: pointer;
   }
-  
   .New-Arrivals{
     text-align: center;
     border-top: solid black 2px;
@@ -225,13 +224,18 @@ div.botonera-izquierda-logo.col-1{
 }
 .cajaSale {
   margin-bottom: 2%;
+  text-align: center;
+  display: flex;
 }
+.cajaSale .row {
+  text-align: center;
+}
+
 .imgSale {
-  width: 100% !important;
+  text-align: center;
   /*position: relative;
   left: 69px;
   bottom: 20px;*/
-  margin-left: 50.8% !important;
   border: black 3px solid;
 }
 .imgSale:hover {
@@ -298,16 +302,6 @@ div.botonera-izquierda-logo.col-1{
     display: none;
   }
 }
-
-
-
-
-
-
-
-
-
-
   .cajaP {
     border: 3px black inset;
     padding-top: 2%;
@@ -431,4 +425,4 @@ del{
 a.buttons:hover{
   color: white;
   text-decoration: none;
-}
+}}
