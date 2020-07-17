@@ -17,68 +17,90 @@
                 <section class="caja offset-4 col-4 offset-4">
                     <form action="/administrador/edit/<%= productToEdit.id %>?_method=PUT" method="POST"> 
                         <div class="row">
-                        <div class="col-6">
-                        <label class="col-12" for="foto">Ingresar ruta de la foto:</label>
-                        <input class="col-12" type="text" name="foto" value= "<%= productToEdit.foto %>" >
+                            <div class="col-6">
+                                <label class="col-12" for="foto">Ingresar ruta de la foto:</label>
+                                <input class="col-12" type="text" name="foto" value= "<%= productToEdit.foto %>" >
+                            </div>
+                            <div class="col-6">
+                                <label class="col-12" for="id">ID del producto:</label>
+                                <input class="col-12" type="text" name="id" value= "<%= productToEdit.id %>" readonly>
+                            </div>
                         </div>
-                        <div class="col-6">
-                        <label class="col-12" for="id">ID del producto:</label>
-                        <input class="col-12" type="text" name="id" value= "<%= productToEdit.id %>">
-                        </div>
-                        </div>
-                        <label class="col-12" for="producto">Producto:</label>
-                        <input class="col-12" type="text" name="producto" value='<%= productToEdit.nombre %>'>
-                        <label for="precio">Precio:</label>
-                        <input class="col-12" type="text" name="precio" value='<%= productToEdit.precio %>'>
-                        <label for="producto">Categoria: </label>
-                        <input class="col-12" type="text" name="categoria" value='<%= productToEdit.categoria %>'>
-                        <label class="col-6" for="producto">Sexo: </label>
-                        <select class="col-6" name="sexo" id="">
-                            <% if(productToEdit.genero == 'hombre') { %>
-                                <option value="hombre">hombre</option>
-                                <option value="mujer">mujer</option>
-                            <% } else { %>
-                                <option value="mujer">mujer</option>
-                                <option value="hombre">hombre</option>
+                        <label class="col-12" for="nombre">Nombre:</label>
+                        <input class="col-12" type="text" name="nombre" value='<%= productToEdit.name %>'>
+                        <label class="col-12" for="descripcion">Descripción:</label>
+                        <input class="col-12" type="text" name="descripcion" value='<%= productToEdit.description %>'>
+                        <label class="col-12" for="precio">Precio:</label>
+                        <input class="col-12" type="text" name="precio" value='<%= productToEdit.price %>'>
+                        <label class="col-12" for="categoria">Categoria: </label>
+                        <select class="col-12" name="categoria" id="">
+                            <% for (let i = 0; i < categories.length; i++) { %>
+                                <% if (categories[i].id == productToEdit.category_id) { %>
+                                    <option value="<%= categories[i].id %>" selected>
+                                        <%= categories[i].category_name %>
+                                    </option>
+                                <% } else { %>
+                                    <option value="<%= categories[i].id %>">
+                                        <%= categories[i].category_name %>
+                                    </option>
+                                <% } %>
                             <% } %>
                         </select>
-                        <label class="Sale" for="producto">Sale?</label>
-                            <% if(productToEdit.sale == 'si'){ %>
-                            <input type="radio" name="sale" value="si" checked>Si<input type="radio" name="sale" value="no">No
-                            <% }else{ %>
-                            <input type="radio" name="sale" value="si">Si<input type="radio" name="sale" value="no" checked>No
-                            <% } %>
+                        <!-- <input class="col-12" type="text" name="categoria" value='<%= productToEdit.category_id %>'> -->
+                        <div class="row">
+                            <div class="col-6">
+                                <label class="col-12" for="producto">Sexo: </label>
+                                <select class="col-12" name="sexo" id="">
+                                    <% if(productToEdit.genre_id == 1) { %>
+                                        <option value="hombre">Hombre</option>
+                                        <option value="mujer">Mujer</option>
+                                    <% } else { %>
+                                        <option value="mujer">Mujer</option>
+                                        <option value="hombre">Hombre</option>
+                                    <% } %>
+                                </select>
+                            </div>
+                            <div class="col-6">
+                                <label class="col-12" for="sale">Sale?</label>
+                                <% if(productToEdit.sale == true){ %>
+                                    <input class="col-3" type="radio" name="sale" value="si" checked>Si<input class="col-3" type="radio" name="sale" value="no">No
+                                <% }else{ %>
+                                    <input class="col-3" type="radio" name="sale" value="si"> Si   <input class="col-3" type="radio" name="sale" value="no" checked> No
+                                <% } %>
+                            </div>
+                        </div>
                         <label class="col-12" for="Talle">Talles disponibles:</label>
-                        <% if(productToEdit.talles.includes('XL')) { %>
+                        <% if(sizes.id == 'XL') { %>
                             <input class="col-1" type="checkbox" name="Talles" value="XL" checked>XL
                         <% } else { %>
                             <input class="col-1" type="checkbox" name="Talles" value="XL">XL 
                         <% } %>
-                        <% if(productToEdit.talles.includes('L')) { %>
+                        <% if(sizes.id == 'L') { %>
                             <input class="col-1" type="checkbox" name="Talles" value="L" checked> L
                         <% } else { %>
                             <input class="col-1" type="checkbox" name="Talles" value="L"> L
                         <% } %>
-                        <% if(productToEdit.talles.includes('M')) { %>
+                        <% if(sizes.id == 'M') { %>
                             <input class="col-1" type="checkbox" name="Talles" value="M" checked> M
                         <% } else { %>
                             <input class="col-1" type="checkbox" name="Talles" value="M"> M
                         <% } %>
-                        <% if(productToEdit.talles.includes('S')) { %>
-                            <input class="col-1" type="checkbox" name="Talles" value="S" checked> S
+                        <% if(sizes.id == 'S') { %>
+                            <input class="col-1" type="checkbox" name="Talles" value="S" checked>S 
                         <% } else { %>
-                            <input class="col-1" type="checkbox" name="Talles" value="S"> S
+                            <input class="col-1" type="checkbox" name="Talles" value="S">S 
                         <% } %>
-                        <% if(productToEdit.talles.includes('XS')) { %>
-                            <input class="col-1" type="checkbox" name="Talles" value="XS" checked> XS
+                        <% if(sizes.id == 'XS') { %>
+                            <input class="col-1" type="checkbox" name="Talles" value="XS" checked>XS 
                         <% } else { %>
-                            <input class="col-1" type="checkbox" name="Talles" value="XS"> XS
-                        <% } %>
+                            <input class="col-1" type="checkbox" name="Talles" value="XS">XS 
+                         <% } %>
+                        <br>
                         <button class="col-12" type="submit">Cargar</button>    
-                    </form>
+                    </form><br>
                     <form action="/administrador/delete/<%= productToEdit.id %>?_method=DELETE" method='POST'>
-                            <button class="col-12" type="submit" style="background-color:red;color:white">Eliminar</button>
-                        </form>
+                        <button class="col-12" type="submit" style="background-color:red;color:white">Eliminar</button>
+                    </form>
                 </section>
             </div>
         </div>

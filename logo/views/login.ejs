@@ -22,10 +22,10 @@
             <div class='crearcuenta col-12'><h2> ¿PRIMERA VEZ? CREAR UNA CUENTA</h2></div>
             <br>
             <h3 class='registerdescripcion'>Registrate en pocos segundos y continua con tu compra. Podrás acceder a beneficios exlusivos.</h3>
-        <div class='botonregistrate'><a class='registrate' href='/users/register/'>Registrate</a></div>
+            <div class='botonregistrate'><a class='registrate' href='/users/register/'>Registrate</a></div>
     </form>
-    <div class = 'descripcion col-12'><h4><a href='/users/register/'>¿No eres miembro? Registrate</a></h4></div>
-    </div>
+            <div class = 'descripcion col-12'><h4><a href='/users/register/'>¿No eres miembro? Registrate</a></h4></div>
+        </div>
     </div>
     <div class ='container offset-1 col-3'>
         <div class = 'row'>
@@ -34,30 +34,27 @@
                 <path fill-rule="evenodd" d="M4.146 4.146a.5.5 0 000 .708l7 7a.5.5 0 00.708-.708l-7-7a.5.5 0 00-.708 0z" clip-rule="evenodd"/>
               </svg> </a></div>
             <div class='crearcuenta col-12'><h2> INICIAR SESION</h2></div>
-            <% if (typeof errors != 'undefined') {%>
-              <h3 class =' col-12 ERROR'>ERROR !</h3>
-              <ul>
-                  <% for (let i = 0; i < errors.length; i++){ %>
-                      <li>
-                          <%=errors[i].msg %>
-                      </li>
-
-                  <% } %>
-              </ul>
-              <% } %>
-    <form method = "POST" action = '/users/login/'>
-        <label class = 'offset-1 col-10 offset-1' ><h3>Email</h3></label>
-        <input class = 'offset-1 col-10 offset-1'type='text' name='email'>
-        <label class='offset-1 col-10 offset-1'><h3>Contraseña</h3></label>
-        <input class = 'offset-1 col-10 offset-1'type='password' name='password'>
-        <label class='offset-2 col-7 offset-1'><h4>Recordame</h4></label>
-        <input type="checkbox" size="7px" name="recordame">
-        <button class ='offset-2 button col-8 offset-2' type='submit'><h5>Ingresar</h5></button>
-    </form>
-
+            <% if (typeof errors != 'undefined') { %>
+                <h3 class =' col-12 ERROR'>ERROR !</h3>
+                <ul>
+                    <% for (let i = 0; i < errors.length; i++) { %>
+                        <li>
+                             <%= errors[i].msg %>
+                        </li>
+                    <% } %>
+                </ul>
+            <% } %>
+            <form method = "POST" action = '/users/login/'>
+                <label class = 'offset-1 col-10 offset-1' ><h3>Email</h3></label>
+                <input class = 'offset-1 col-10 offset-1'type='text' name='email'>
+                <label class='offset-1 col-10 offset-1'><h3>Contraseña</h3></label>
+                <input class = 'offset-1 col-10 offset-1'type='password' name='password'>
+                <label class='offset-2 col-7 offset-1'><h4>Recordame</h4></label>
+                <input type="checkbox" size="7px" name="recordame">
+                <button class ='offset-2 button col-8 offset-2' type='submit'><h5>Ingresar</h5></button>
+            </form>
+        </div>
     </div>
-    </div>
-
 </body>
 </html>
 

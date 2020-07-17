@@ -21,7 +21,7 @@ module.exports = function(sequelize, dataTypes) {
         colour_id: {
             type: dataTypes.INTEGER
         },
-        gender_id: {
+        genre_id: {
             type: dataTypes.INTEGER
         },
         price: {
@@ -40,9 +40,9 @@ module.exports = function(sequelize, dataTypes) {
     let Product = sequelize.define(alias, cols, config);
 
     Product.associate = function(models) {
-        Product.belongsTo(models.Gender, {
-			as: "gender",
-			foreignKey: "gender_id"
+        Product.belongsTo(models.Genre, {
+			as: "genre",
+			foreignKey: "genre_id"
         });
         Product.belongsTo(models.Brand, {
 			as: "brand",
@@ -50,7 +50,7 @@ module.exports = function(sequelize, dataTypes) {
 		});
         Product.hasMany(models.Image, {
 			as: "images",
-			foreignKey: "productid"
+			foreignKey: "product_id"
 		});
         Product.belongsToMany(models.Cart, {
             as: "carts",
@@ -61,7 +61,7 @@ module.exports = function(sequelize, dataTypes) {
         });
         Product.belongsToMany(models.User, {
             as: "users",
-            through: "product_user",
+            through: "favorites",
             foreignKey: "product_id",
             otherKey: "user_id",
             timestamps: false

@@ -12,60 +12,60 @@ const administController = {
         res.render("administ");
     },
     cargar : function(req, res) {
-        let n = products.length;
-        let pdtoId = products[n-1].id;
-        let products =  {
-            id : pdtoId+1,
-            foto : req.body.foto,
-            nombre : req.body.producto,
-            precio : req.body.precio,
-            talles : req.body.Talles,
-            categoria : req.body.categoria,
-            genero : req.body.sexo,
+        db.Product.create({
+            name : req.body.producto,
+            description : req.body.descripcion,
+            category_id : req.body.categoria,
+            //brand_id
+            //colour_id
+            genre_id : req.body.sexo,
+            sizes : req.body.Talles,
+            price : req.body.precio,
             sale : req.body.sale
-        }
-        let datajson = fs.readFileSync('./data/products.json');
-        let datajs = JSON.parse(datajson);
-        datajs.push(products);
-        datajson = JSON.stringify(datajs, null, 4)
-        fs.writeFileSync("./data/products.json", datajson);
+        });
+
         res.redirect("/administrador/");
     },
 
-    edit : function(req, res, next) {
-        let pdtoId= req.params.productId;
-        let productToEdit = null;
+    edit : function(req, res) {
+        let pedidoProducto = db.Product.findByPk(req.params.productId);
+        let pedidoCategorias = db.Category.findAll();
+        let pedidoGeneros = db.Genre.findAll();
+        let pedidoTalles = db.Size.findAll();
 
-        let datajson = fs.readFileSync('./data/products.json');
-        let products = JSON.parse(datajson);
-
-        productToEdit = products.find(pdto => pdto.id == pdtoId);
-		res.render('administEdit',{productToEdit});
+        Promise.all([pedidoProducto, pedidoCategorias, pedidoGeneros, pedidoTalles])
+            .then(function([productToEdit, categories, genres, sizes, toto]) {
+                res.render("administEdit", {
+                    productToEdit: productToEdit, 
+                    categories:categories, 
+                    genres: genres, 
+                    sizes:sizes
+                })
+            })
+            .catch(function(error) {
+                console.log(error)
+            })
     },
 
-    update: (req, res) => {
-		let pdtoNuevo = {
-            id: req.params.productId,
-            foto: req.body.foto,
-			nombre: req.body.producto,
-			precio: req.body.precio,
-			talles: req.body.Talles,
-            categoria: req.body.categoria,
-            genero: req.body.sexo,
+    update: function(req, res) {
+        db.Product.update({
+            name: req.body.producto,
+            category_id: req.body.categoria,
+            gender_id: req.body.sexo,
+            sizes: req.body.Talles,
+			price: req.body.precio,
             sale: req.body.sale
-		}
-
-        let datajson = fs.readFileSync('./data/products.json');
-        let products = JSON.parse(datajson);
-        products.push(pdtoNuevo);
-        let productoNuevoJSON = JSON.stringify(products, null, 4);
-		fs.writeFileSync("./data/products.json", productoNuevoJSON);
+        }, {
+            where: {
+                id: req.params.id
+            }
+        });
 
 		res.redirect('/');
     },
     
-    destroy : (req, res) => {
-		let pdtoId = req.params.productId;
+    destroy : function(req, res) {
+        let pdtoId = req.params.productId;
      
         let datajson = fs.readFileSync('./data/products.json');
         let products = JSON.parse(datajson);

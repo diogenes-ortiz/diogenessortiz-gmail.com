@@ -21,6 +21,12 @@ module.exports = function(sequelize, dataTypes) {
         avatar: {
             type: dataTypes.STRING
         },
+        phone_number: {
+            type: dataTypes.INTEGER
+        },
+        age: {
+            type: dataTypes.INTEGER
+        },
         admin: {
             type: dataTypes.BOOLEAN
         }
@@ -35,7 +41,7 @@ module.exports = function(sequelize, dataTypes) {
     User.associate = function(models) {
         User.belongsToMany(models.Product, {
             as: "products",
-            through: "product_user",
+            through: "favorites",
             foreignKey: "user_id",
             otherKey: "product_id",
             timestamps: false

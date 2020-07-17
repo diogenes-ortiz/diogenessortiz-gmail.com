@@ -6,7 +6,7 @@ module.exports = function(sequelize, dataTypes) {
 			type: dataTypes.INTEGER,
 			primaryKey: true,
 			autoIncrement: true,
-			allowNull: false
+			//allowNull: false
 		},
 		route: {
 			type: dataTypes.STRING

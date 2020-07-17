@@ -5,34 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="/stylesheets/products/detailM.css">
-    <title>Document</title>
+    <link  rel="icon"   href="images/favicon.jpg" type="image/jpg" />
+    <title>404 Store</title>
 </head>
 <body>
     <%- include("../partials/header") %>
-    <% productsId.forEach (function(detail){ %>
+    <%# product.forEach (function(detail){ %>
 
-    
+        
     <div class="container-fluid">
         <div class="row">
         <section class="col-xs-12 col-md-5 col-lg-7">
             <div class="row">
             <section class= "contMini col-xs-12 col-2 offset-1">
                 <div class="row">
+                    <% if(detail.images[1] != undefined) { %>
                 <section class="col-xs-2 col-lg-10">
-                    <img class="mini miniTop" src= <%= detail.image %> alt="">
+                    <img class="mini miniTop" src= "/<%= detail.images[1].route %>" alt="">
                 </section>
+                <% } %>
+                <% if(detail.images[2] != undefined) { %>
                 <section class="col-xs-2 col-lg-10">
-                    <img class="mini" src=<%= detail.image %> alt="">
+                    <img class="mini" src="/<%= detail.images[2].route %>" alt="">
                 </section>
+                <% } %>
+                <% if(detail.images[3] != undefined) { %>
                 <section class="col-xs-2 col-lg-10">
-                    <img class="mini" src=<%= detail.image %> alt="">
+                    <img class="mini" src="/<%= detail.images[3].route %>" alt="">
                 </section>
+                <% } %>
                 </div>
             </section>
             <section class="contFotito col-xs-2 col-md-9 col-lg-9">
             <div class="row">
                 
-                <img class="fotito col-xs-2 col-lg-8" src= <%= detail.image %> alt="Campera">
+                <img class="fotito col-xs-2 col-lg-8" src="/<%= detail.images[0].route %>" alt="Campera">
             </div>
             </section>
             </div>
@@ -48,8 +55,7 @@
                     <ul>
                         <% detail.sizes.forEach(function(talle) { %>
                             <strong><li><%= talle %></li></strong>
-                       <% }) %>
-                        
+                        <% }) %>
                     </ul>
                 </article>
                 <div class="col-1">
@@ -92,7 +98,7 @@
             </section>
         </div>
     </div>
-    <% }) %>
+    <%# }) %>
 </body>
 </html>
 
