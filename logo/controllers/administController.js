@@ -34,12 +34,14 @@ const administController = {
         let pedidoTalles = db.Size.findAll();
 
         Promise.all([pedidoProducto, pedidoCategorias, pedidoGeneros, pedidoTalles])
-            .then(function([productToEdit, categories, genres, sizes, toto]) {
+            .then(function([productToEdit, categories, genres, sizes]) {
                 res.render("administEdit", {
                     productToEdit: productToEdit, 
                     categories:categories, 
                     genres: genres, 
-                    sizes:sizes
+                    sizes:sizes,
+                    title: "Admin",
+                    fileCSS: "administ.css"
                 })
             })
             .catch(function(error) {
@@ -81,7 +83,5 @@ const administController = {
 	}
 
 }
-
-
 
 module.exports = administController;

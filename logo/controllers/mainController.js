@@ -11,7 +11,47 @@ const mainController = {
     },
 
     carrito : function (req,res){
-        res.render('carrito')
+        db.Cart.findAll({
+            where: {
+                user_id: req.params.productsCategory
+            },
+            include: [{association: "genre"}, {association: "images"}]
+        })
+            .then(function(products) {
+                let Categoria = products[0].genre_id == 1 ? "Hombre" : "Mujer";
+                res.render("products/productsMix", {
+                    products:products,
+                    title: Categoria,
+                    fileCSS: "products/hombres.css"
+                })
+            })
+            .catch(function(error) {
+                console.log(error)
+            })
+
+
+        db.Product.findByPk(req.params.productsId, {
+            include: [{association: "genre"}, 
+                        {association: "images"}, 
+                        {association: "brand"},
+                        {association: "categories"},
+                        {association: "sizes"},
+                        {association: "colours"}]
+        })
+            .then(function(detail) {
+                res.render("products/detailM", {
+                    detail:detail,
+                    title: "Detalle de producto",
+                    fileCSS: "products/detail.css"
+                });
+            })
+            .catch(function(error) {
+                console.log(error)
+            })
+        res.render('carrito', {
+            title: "Carrito",
+            fileCSS: "carrito.css"
+        })
     },
 
     pago : function (req,res){
@@ -19,7 +59,10 @@ const mainController = {
     },
 
     register: function(req, res, next){
-        res.render('registro');
+        res.render('registro', {
+            title: "Registro",
+            fileCSS: "register.css"
+        });
     },
 
     sendregister: function(req,res,next){
@@ -35,13 +78,20 @@ const mainController = {
             });
 
             res.redirect('/')
-         } else{
-             res.render('registro', {errors:errors.errors})
+        } else{
+            res.render('registro', {
+                errors:errors.errors,
+                title: "Registro",
+                fileCSS: "register.css"
+            });
          }
     },
 
     login: function(req, res, next){
-        res.render('login');
+        res.render('login', {
+            title: "Login",
+            fileCSS: "login.css"
+        });
     },
 
     sendlogin: function(req,res, next){
@@ -66,6 +116,7 @@ const mainController = {
                        // Setear en session el ID del usuario
 
                        req.session.usuarioLogueado = user;
+                       //req.session.id = id;
 
                        // Setear la cookie
                        if (req.body.recordame != undefined) {
@@ -78,7 +129,7 @@ const mainController = {
                    } else {   //password no matchea
                        //let usuarioInvalido = 'El usuario es inválido, verifique sus datos';
                        res.render('login', {errors: [
-                        {msg: 'Password inválido !'}
+                           {msg: 'Password inválido !'}
                     ]});//{mensaje: usuarioInvalido});
                    }
                 } else {   //usuario NO encontrado
@@ -89,11 +140,33 @@ const mainController = {
                 }
             })
         }else{   //hay errores
-            return res.render('login', {errors: errors.errors});
+            return res.render('login', {
+                errors: errors.errors,
+                title: "Login",
+                fileCSS: "login.css"
+            });
         }
     },
 
     infoUser : function(req, res, next) {
+        /* 
+        let pedidoUsuario = db.User.findByPk(req.params.productId);
+        let pedidoCategorias = db.Category.findAll();
+        let pedidoGeneros = db.Genre.findAll();
+        let pedidoTalles = db.Size.findAll();
+
+        Promise.all([pedidoProducto, pedidoCategorias, pedidoGeneros, pedidoTalles])
+            .then(function([productToEdit, categories, genres, sizes, toto]) {
+                res.render("administEdit", {
+                    productToEdit: productToEdit, 
+                    categories:categories, 
+                    genres: genres, 
+                    sizes:sizes
+                })
+            })
+            .catch(function(error) {
+                console.log(error)
+            }) */
         res.render("users")
     }
 }

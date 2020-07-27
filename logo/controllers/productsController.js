@@ -11,7 +11,11 @@ const productsController = {
             include: [{association: "genre"}, {association: "images"}]
         })
             .then(function(products) {
-                res.render("products/productsMix", {products:products})
+                res.render("products/productsMix", {
+                    products:products,
+                    title: "Productos",
+                    fileCSS: "products/hombres.css"
+                })
             })
             .catch(function(error) {
                 console.log(error)
@@ -27,7 +31,11 @@ const productsController = {
         })
             .then(function(products) {
                 //console.log(products)
-                res.render("products/sale", {products:products});
+                res.render("products/sale", {
+                    products:products,
+                    title: "Sale",
+                    fileCSS: "products/sale.css"
+                });
             })
             .catch(function(error) {
                 console.log(error)
@@ -42,7 +50,12 @@ const productsController = {
             include: [{association: "genre"}, {association: "images"}]
         })
             .then(function(products) {
-                res.render("products/productsMix", {products:products})
+                let Categoria = products[0].genre_id == 1 ? "Hombre" : "Mujer";
+                res.render("products/productsMix", {
+                    products:products,
+                    title: Categoria,
+                    fileCSS: "products/hombres.css"
+                })
             })
             .catch(function(error) {
                 console.log(error)
@@ -59,7 +72,11 @@ const productsController = {
                         {association: "colours"}]
         })
             .then(function(detail) {
-                res.render("products/detailM", {detail:detail});
+                res.render("products/detailM", {
+                    detail:detail,
+                    title: "Detalle de producto",
+                    fileCSS: "products/detail.css"
+                });
             })
             .catch(function(error) {
                 console.log(error)
