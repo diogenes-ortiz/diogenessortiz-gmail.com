@@ -12,6 +12,7 @@ var usersRouter = require('./routes/users');
 var carritoRouter = require('./routes/carrito');
 var productsRouter = require("./routes/products")
 var administRouter = require("./routes/administ");
+var favRouter = require("./routes/fav");
 //const e = require('express');
 var recordameMiddleware = require('./middlewares/recordameMiddleware');
 
@@ -41,6 +42,7 @@ app.use('/users', usersRouter);
 app.use('/carrito', carritoRouter);
 app.use('/products', productsRouter);
 app.use('/administrador', administRouter);
+app.use('/favorites', favRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

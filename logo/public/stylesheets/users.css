@@ -1,3 +1,93 @@
-section {
-    border: 1px solid black;
+.barraDer {
+    border-right: 1px solid black;
+}
+
+.config {
+    margin-bottom: 170%;
+}
+
+.title {
+    text-align: center;
+    margin-top: 2%;
+}
+
+h6 {
+    margin-bottom: 10%;
+}
+
+.changes {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    background-color: white;
+    border: solid 2px black;
+}
+
+.changes:hover {
+    background-color: black;
+    color: white;
+}
+
+input {
+    border: white solid 1px;
+    border-bottom: solid 2px black;
+}
+
+input:focus {
+    border: white solid 1px !important;
+    background-color: whitesmoke;
+}
+
+.logOut {
+    background-color: rgb(226, 52, 52);
+    color: white;
+    border: black solid 1px;
+    margin-bottom: 5%;
+    margin-top: 295%;
+}
+
+label {
+    margin-top: 7%;
+    padding: 0% !important;
+}
+
+@media (max-width: 1306px) {
+    .logOut {
+        margin-top: 330%;
+    }
+}
+
+@media (max-width: 992px) {
+    .config {
+        margin-bottom: 20%;
+    }
+    .changes {
+        margin-bottom: 10%;
+    }
+    .logOut {
+        margin-top: 330%;
+    }
+}
+
+@media (max-width: 769px) {
+    .logOut {
+        margin-top: 280%;
+    }
+}
+
+@media (max-width: 594px) {
+    .logOut {
+        margin-top: 220%;
+    }
+}
+
+@media (max-width: 481px) {
+    .logOut {
+        margin-top: 290%;
+    }
+}
+
+@media (max-width: 481px) {
+    .logOut {
+        margin-top: 330%;
+    }
 }

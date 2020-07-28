@@ -107,6 +107,8 @@ ul {
     border: black 1px inset;
     color: white;
     fill: white;
+    padding-left: 0%;
+    padding-right: 0%;
 }
 
 .cora:hover {
@@ -119,6 +121,7 @@ ul {
     background-color: white;
     border: black 2px solid;
     color: black;
+    padding: 0%;
 }
 
 .bolsa:hover {
@@ -127,6 +130,13 @@ ul {
     color: black;
 }
 
+.contBolsa {
+    padding: 0%;
+}
+
+input {
+    display: none;
+}
 
 .bolsita {
     margin-bottom: 5%;
@@ -143,7 +153,11 @@ ul {
 
 
 
-
+@media (max-width: 990px) {
+    .contBolsa {
+        padding: 4% !important;
+    }
+}
 
 
 @media (max-width: 576px) {
@@ -189,3 +203,6 @@ ul {
         border-radius: 2%;
     }
 }
+
+
+

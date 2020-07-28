@@ -225,7 +225,7 @@ div.botonera-izquierda-logo.col-1{
 .cajaSale {
   margin-bottom: 2%;
   text-align: center;
-  display: flex;
+  margin-left: 26.4% !important;
 }
 .cajaSale .row {
   text-align: center;
@@ -286,11 +286,28 @@ div.botonera-izquierda-logo.col-1{
     font-size: 20px;
   }
 }
+
+@media (max-width: 1456px) {
+  .titleH {
+    display: none;
+  }
+  .titleM {
+    display: none;
+  }
+}
+
 @media (max-width: 972px){
   a.buttons{
     font-size: 15px;
   }
 }
+
+@media (max-width: 990px) {
+  .cajaSale {
+    margin-left: 28% !important;
+  }
+}
+
 @media (max-width: 700px){
   a.buttons{
     display: none;
@@ -409,6 +426,9 @@ del{
         color: black;
         border-radius: 2%;
     }
+    .mini {
+      margin-left: 100% !important;
+    }
     
 }
 @media (max-width: 990px) {
@@ -426,3 +446,7 @@ a.buttons:hover{
   color: white;
   text-decoration: none;
 }}
+
+
+
+

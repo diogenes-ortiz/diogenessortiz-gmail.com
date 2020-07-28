@@ -149,6 +149,31 @@ const mainController = {
     },
 
     infoUser : function(req, res, next) {
+        let users = req.params.id
+        db.User.findByPk(users)
+            .then(function(user) {
+                console.log(user);
+                res.render("users", {user})
+            })
+    },
+    logOut : function(req, res, next) {
+        req.session.destroy();
+        res.redirect("/");
+    },
+    edit : function(req, res, next) {
+        db.User.update(
+            req.body, {
+                where : {
+                    id : req.params.id
+                }
+            }
+        ).then(function(user) {
+            console.log(user)
+            res.redirect("/")
+            })
+    }
+}
+
         /* 
         let pedidoUsuario = db.User.findByPk(req.params.productId);
         let pedidoCategorias = db.Category.findAll();
@@ -167,8 +192,5 @@ const mainController = {
             .catch(function(error) {
                 console.log(error)
             }) */
-        res.render("users")
-    }
-}
 
 module.exports=mainController

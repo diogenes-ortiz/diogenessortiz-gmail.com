@@ -11,6 +11,7 @@ const productsController = {
             include: [{association: "genre"}, {association: "images"}]
         })
             .then(function(products) {
+                console.log(products.genre_id)
                 res.render("products/productsMix", {
                     products:products,
                     title: "Productos",

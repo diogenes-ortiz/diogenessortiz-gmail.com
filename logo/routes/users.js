@@ -83,6 +83,8 @@ router.get('/login', /*guestMiddleware,*/ mainController.login);
   ], mainController.sendlogin);
 //})
 /* GET ¿? */
-router.get("/info", mainController.infoUser);
+router.get("/info/:id", mainController.infoUser);
+router.post("/info", mainController.logOut)
+router.post("/info/:id", mainController.edit);
 
 module.exports = router;
