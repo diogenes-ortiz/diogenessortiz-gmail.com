@@ -1,48 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include("./partials/head") %>
+   <%- include("./partials/head") %>
 <body>
-    <%- include("./partials/header") %>
+  <%- include("./partials/header") %>
+  <div class ='container contenedor col-3'>
+    <div class = 'row'>
+        <div class = 'exit offset-10 col-2'><a class='exitbutton' href='/'><svg class="bi bi-x" width="2em" height="2em" viewBox="0 0 16 16" fill="black" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M11.854 4.146a.5.5 0 010 .708l-7 7a.5.5 0 01-.708-.708l7-7a.5.5 0 01.708 0z" clip-rule="evenodd"/>
+            <path fill-rule="evenodd" d="M4.146 4.146a.5.5 0 000 .708l7 7a.5.5 0 00.708-.708l-7-7a.5.5 0 00-.708 0z" clip-rule="evenodd"/>
+          </svg> </a></div>
+        <h2 class= "crearcuenta col-12"> CREAR CUENTA</h2>
+        <div class='errores offset-1 col-10 offset-1'>
 
-    <div class ='container contenedor col-3'>
-        <div class = 'row'>
-            <div class = 'exit offset-10 col-2'><a class='exitbutton' href='/'><svg class="bi bi-x" width="2em" height="2em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" d="M11.854 4.146a.5.5 0 010 .708l-7 7a.5.5 0 01-.708-.708l7-7a.5.5 0 01.708 0z" clip-rule="evenodd"/>
-                <path fill-rule="evenodd" d="M4.146 4.146a.5.5 0 000 .708l7 7a.5.5 0 00.708-.708l-7-7a.5.5 0 00-.708 0z" clip-rule="evenodd"/>
-              </svg> </a></div>
-            <div class='crearcuenta col-12'><h2> CREAR CUENTA</h2></div>
-            <div class = 'descripcion col-12'><h4>Vuelvete un miembro - disfrutaras de ofertas exlusivas, invitaciones y premios.</h4></div>
-            <% if (typeof errors != 'undefined') {%>
-                <h3 class =' col-12 ERROR'>ERROR !</h3>
-                <ul>
-                    <% for (let i = 0; i < errors.length; i++){ %>
-                        <li>
-                            <%=errors[i].msg %>
-                        </li>
-                    <% } %>
-                </ul>
-            <% } %>
-            <form method = "POST" action = '/users/register/'enctype='multipart/form-data' >
-                <label class = 'offset-1 col-6 col-sm-9 col-md-9 col-lg-9 col-xl-10 offset-1'><h3>Nombre</h3></label>
-                <input class = 'offset-1 col-6 col-sm-9 col-md-9 col-lg-9 col-xl-10 offset-1'type='text' name='first_name'>
-                <label class = 'offset-1 col-6 col-sm-9 col-md-9 col-lg-9 col-xl-10 offset-1'><h3>Apellido</h3></label>
-                <input class = 'offset-1 col-6 col-sm-9 col-md-9 col-lg-9 col-xl-10 offset-1'type='text' name='last_name'>
-                <label class = 'offset-1 col-6 col-sm-9 col-md-9 col-lg-9 col-xl-10 offset-1' ><h3>Email</h3></label>
-                <input class = 'offset-1 col-6 col-sm-9 col-md-9 col-lg-9 col-xl-10 offset-1'type='text' name='email'>
-                <label class='offset-1 col-6 col-sm-9 col-md-9 col-lg-9 col-xl-10 offset-1'><h3>Contraseña</h3></label>
-                <input class = 'offset-1 col-6 col-sm-9 col-md-9 col-lg-9 col-xl-10 offset-1'type='password' name='password'>
-                <h3 class='offset-1 col-6 col-sm-9 col-md-9 col-lg-9 col-xl-10 offset-1'>Category</h3>
-                <select  class = 'offset-1 col-6 col-sm-9 col-md-9 col-lg-9 col-xl-10 offset-1'name="category">    
-                    <option value="buyer">Buyer</option>
-                    <option value="admin">Admin</option>
-                </select>
-                
-                <label class = 'offset-1 col-6 col-sm-9 col-md-9 col-lg-9 col-xl-10 offset-1'for=''><h3>Avatar</h3></label>
-                <input class = 'offset-1 col-6 col-sm-9 col-md-9 col-lg-9 col-xl-10 offset-1'type='file' name='avatar'>
-                <button class = 'offset-1 col-6 col-sm-9 col-md-9 col-lg-9 col-xl-10 offset-1' type='submit'><h5>Crear</h5></button>
-            </form>
         </div>
-    </div>
-    <%- include("./partials/footer") %>
+        <div class = 'descripcion col-12'><h4>Vuelvete un miembro - disfrutaras de ofertas exlusivas, invitaciones y premios.</h4></div>
+        <% if (typeof errors != 'undefined') {%>
+          <h3 class =' col-12 ERROR'>ERROR !</h3>
+          <ul class= 'ERROR'>
+              <% for (let i = 0; i < errors.length; i++){ %>
+                  <li>
+                      <%=errors[i].msg %>
+                  </li>
+
+              <% } %>
+          </ul>
+          <% } %>
+<form class ='formulario' method = "POST" action = '/users/register/'enctype='multipart/form-data' >
+    <label class = 'offset-1 col-6 col-sm-9 col-md-9 col-lg-9 col-xl-10 offset-1'><h3 class ='nombrecito'>Nombre</h3></label>
+    <input class = ' formularionombre offset-1 col-9 col-sm-9 col-md-9 col-lg-9 col-xl-10 offset-1'type='text' name='first_name'>
+    <label class = 'offset-1 col-6 col-sm-9 col-md-9 col-lg-9 col-xl-10 offset-1'><h3 class='apellidito'>Apellido</h3></label>
+    <input class = ' formularioapellido offset-1 col-9 col-sm-9 col-md-9 col-lg-9 col-xl-10 offset-1'type='text' name='last_name'>
+    <label class = 'offset-1 col-6 col-sm-9 col-md-9 col-lg-9 col-xl-10 offset-1' ><h3 class= 'email'>Email</h3></label>
+    <input class = ' formularioemail offset-1 col-9 col-sm-9 col-md-9 col-lg-9 col-xl-10 offset-1'type='text' name='email'>
+    <label class='offset-1 col-6 col-sm-9 col-md-9 col-lg-9 col-xl-10 offset-1'><h3 class='contraseña'>Contraseña</h3></label>
+    <input class = ' formulariocontraseña offset-1 col-9 col-sm-9 col-md-9 col-lg-9 col-xl-10 offset-1'type='password' name='password'>
+
+    
+    <label class = 'offset-1 col-6 col-sm-9 col-md-9 col-lg-9 col-xl-10 offset-1'for=''><h3 class='imagen'>Avatar</h3></label>
+    <input class = 'avatarr offset-1 col-9 col-sm-9 col-md-9 col-lg-9 col-xl-10 offset-1'type='file' name='avatar' id ='archivo' accept='.jpg, .png, .jpeg, .gif' required onchange="validar()">
+    <button class = 'boton offset-1 col-6 col-sm-9 col-md-9 col-lg-9 col-xl-10 offset-1' type='submit'><h5>CREAR</h5></button>
+</form>
+</div>
+</div>
+<script src='/jsFront/register.js' type='text/javascript'>
+</script>
+  <%- include("./partials/footer") %>
 </body>
 </html>

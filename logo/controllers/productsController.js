@@ -22,7 +22,9 @@ const productsController = {
                 console.log(error)
             })
     },
-
+    finish : function(req,res,next){
+        res.render('products/thanksForBuying')
+    },
     saleMain : function(req, res, next) {
         db.Product.findAll({
             where: {

@@ -14,34 +14,60 @@
             <div class="col-12">
                 <div class="offset-4 col-4 offset-4">
                     <h2>Cargar productos</h2>
-                </div>
+                </div> 
+                
                 <section class="caja offset-4 col-4 offset-4">
-                    <form action="/administrador/" method="POST"> 
-                        <label class="col-12" for="foto">Ingresar ruta de la foto:</label>
-                        <input class="col-12" type="text" name="foto">
-                        <label class="col-12" for="nombre">Nombre:</label>
-                        <input class="col-12" type="text" name="nombre">
-                        <label class="col-12" for="descripcion">Descripción:</label>
-                        <input class="col-12" type="text" name="descripcion">
-                        <label class="col-12" for="producto">Categoria: </label>
-                        <input class="col-12" type="text" name="categoria">
-                        <label class="col-12" for="precio">Precio:</label>
-                        <input class="col-12" type="text" name="precio">
-                        <label class="col-12" for="producto">Categoria: </label>
-                        <input class="col-12" type="text" name="categoria">
-                        <label class="col-6" for="producto">Sexo: </label>
+                    <div class='row'>
+
+                   
+                    
+                        <div class='row'>
+                    <% if (typeof errores != 'undefined') {%>
+                        <h3 class =' col-12 ERROR'>ERROR !</h3>
+                        <ul class= 'ERROR'>
+                            <% for (let i = 0; i < errores.length; i++){ %>
+                                <li>
+                                    <%=errores[i].msg %>
+                                </li>
+          
+                            <% } %>
+                        </ul>
+                        <% } %> 
+                    
+                    </div>
+                    </div>
+                    <form class= "formulario" action="/administrador/" method="POST"> 
+                       <div class= 'errores col-12'>
+                           
+                       </div>
+                        <label class="photo col-12" for="foto">Ingresar ruta de la foto:</label>
+                        <div class= error5 ></div>
+                        <input class="foto col-12" type="text" name="foto">
+                        <label class="name col-12" for="nombre">Nombre:</label>
+                        <div class = 'error0 col-12'></div>                      
+                        <input class="nombre col-12" type="text" name="nombre">
+                        <label class="description col-12" for="descripcion">Descripción:</label>
+                        <div class = 'error1 col-12'></div>
+                        <input class="descripcion col-12" type="text" name="descripcion">
+                        <label class="product col-12" for="producto">Categoria: </label>
+                        <div class = 'error2 col-12'></div>
+                        <input class="categoria col-12" type="text" name="categoria">
+                        <label class="price col-12" for="precio">Precio:</label>
+                        <div class = 'error3 col-12'></div>                      
+                        <input class="precio col-12" type="text" name="precio">
+                        <label class="sex col-6" for="producto">Sexo: </label>
                         <select class="col-6" name="sexo" id="">
-                            <option value="1">hombre</option>
-                            <option value="2">mujer</option>
+                            <option value="hombre">hombre</option>
+                            <option value="mujer">mujer</option>
                         </select>
-                        <label class="Sale" for="producto">Sale?</label>
-                            <input type="radio" name="sale" value="si">Si<input type="radio" name="sale" value="no">No
+                        <label class="deals Sale" for="producto">Sale?</label>
+                            <input class="sale1" type="radio" name="sale" value="si">Si<input class="sale1" type="radio" checked name="sale" value="no">No
                         
                         <label class="col-12" for="Talle">Talles disponibles:</label>
                         <input class="col-1" type="checkbox" name="Talles" value="XL">XL 
                         <input class="col-1" type="checkbox" name="Talles" value="L"> L
                         <input class="col-1" type="checkbox" name="Talles" value="M"> M
-                        <input class="col-1" type="checkbox" name="Talles" value="S"> S
+                        <input class="col-1" type="checkbox" checked name="Talles" value="S"> S
                         <input class="col-1" type="checkbox" name="Talles" value="XS"> XS 
                         <br>
                         <button class="col-12" type="submit">Cargar</button>
@@ -50,5 +76,6 @@
             </div>
         </div>
     </div>
+    <script src='/jsFront/admin.js' type='text/javascript'></script>
 </body>
 </html>

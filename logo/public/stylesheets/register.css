@@ -1,33 +1,93 @@
 body{
-    background-color: white;
+  background-color: rgb(207, 207, 207) !important;
     
     }
-    
+    .nuevoserrores{
+      color:red
+    }
+    .errores{
+      color: red
+    }
+    .errores1{
+      display:hidden
+    }
+label.offset-1{
+  padding-left:0px !important;
+}
+h3.offset-1{
+  padding-left:0px !important;
+}
+select.offset-1{
+  padding-left:0px !important;
+}
+input.avatarr{
+  padding-left: 0px !important;
+}
+.nuevoerror{
+  border-bottom: solid red 1px !important;
+  border-left: none !important;
+  border-right: none !important;
+  border-top: none !important;
+}
+.incorrecto{
+  color:red;
+  margin-top: 5% !important;
+font-size: 15px !important;
+}
+.correcto{
+  color:green;
+  margin-top: 5% !important;
+font-size: 15px !important;
+}
     .container:hover{
         border: black 1px solid;
     }
-    
+    input.offset-1{
+      border-bottom: solid black 1px !important;
+      border-left: none !important;
+      border-right: none !important;
+      border-top: none !important;
+    }
+
+    select.offset-1{
+      border-bottom: solid black 1px !important;
+      border-left: none !important;
+      border-right: none !important;
+      border-top: none !important;
+    }
     .container{
         padding: 30px;
         padding-top:15px;
         margin-top: 5%;
-        background-color: rgb(194, 185, 185);
+        background-color: white;
         padding-top:15px;
     
     }
     h3{
         color:black;
-        font-size: 20px;
+        margin-top: 5% !important;
+    font-size: 15px !important;
     }
     .button{
         margin-top: 10px;
     }
     h2{
         align-items: center;
-        color: black;
+        color: red;
         display: inline-block;
         text-align: center;
+        font-size: 20px !important;
         
+    }
+    .boton{
+      background-color: black !important;
+      border: none ;
+      padding-top: 2%;
+      padding-bottom: 2%;
+      margin-top: 3% !important;
+    }
+    input.avatarr{
+      border: none !important;
     }
     .crearcuenta{
         margin-left: 0%;
@@ -43,7 +103,7 @@ body{
         padding-bottom: 10px;
     }
     h4{
-        font-size: 15px;
+        font-size: 15px !important;
         text-align: center;
         color: black;
     }
@@ -51,7 +111,7 @@ body{
         margin-top: 30px;
     }
     h5{
-        color: black;
+        color: white;
     }
     .exitbutton:hover{
         text-decoration: none;
@@ -238,6 +298,7 @@ body{
 .ERROR{
     text-align: center;
     color: red;
+    display:none;
 }
 @media (max-width: 777px) {
   h2{

@@ -7,6 +7,14 @@
     padding-right: 0px;
     margin-bottom: 7%;
 }
+a{
+    color:white !important;
+    
+}
+a:hover{
+    text-decoration: none !important;
+
+}
 
 ul li {
     display: inline-block;

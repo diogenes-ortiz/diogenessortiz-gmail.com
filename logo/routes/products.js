@@ -14,5 +14,6 @@ router.get("/sale/:productsSale", productsController.saleMain);
 /* GET category */
 router.get("/categoria/:productsCategory", productsController.category);
 
+router.get("/comprafinalizada", productsController.finish)
 
 module.exports =  router;

@@ -4,11 +4,23 @@
     padding: 20px;
     background-color: lightgrey;
 }
-
+.errores{
+    color:red;
+}
+ul.ERROR{
+    display:block !important;
+}
 h2 {
     margin-top: 100px;
 }
 
 .Sale {
     margin-left: 50px;
+}
+li{
+    list-style: none;
+}
+.newerrors{
+    color:red;
+    margin-left: 15px;
 }
