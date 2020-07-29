@@ -28,24 +28,10 @@ router.get('/', mainController.home);
 /* GET register */
 router.get('/register', guestMiddleware, mainController.register);
 router.post('/register', upload.any(), /*logDBMiddleWare,*/ [
-    check ('first_name').isLength({min:1}).withMessage('Es necesario ingresar un nombre'),
-    check('last_name').isLength({min:1}).withMessage('Es necesario ingresar un apellido'),
-    check('email').isEmail().withMessage('Email invalido').custom(value => {
-        let usuariosJSON = fs.readFileSync('./data/users.json', { encoding: 'utf-8'});
-        let usuarios = JSON.parse(usuariosJSON);
-        for (const users of usuarios) {
-            //console.log solo para chequear si efectivamente me está mostrando el mail con el quiero comparar y ver si se repite o no.
-            console.log(value);
-            console.log("Hola4")
-			      if(users.email === value){
-                //y este console.log para mostrar que sí se repite el mail.
-                console.log('mail ya en uso');
-                return false;
-			      }
-		    }
-		    return true;
-    }),
-    check('password').isLength({min:7}).withMessage('La contraseña debe tener al menos 7 caracteres'),
+    check ('first_name').isLength({min:2}).withMessage('Es necesario ingresar un nombre'),
+    check('last_name').isLength({min:2}).withMessage('Es necesario ingresar un apellido'),
+    check('email').isEmail().withMessage('Email invalido'),
+    check('password').isLength({min:8}).withMessage('La contraseña debe tener al menos 8 caracteres'),
 ], mainController.sendregister);
 
 /* GET login */
@@ -67,7 +53,7 @@ router.get('/login', /*guestMiddleware,*/ mainController.login);
 	  	    }
 		      return false;
         }),*/
-      check('password').isLength({min:7})/*.custom(value => {*/
+      check('password').isLength({min:8})/*.custom(value => {*/
           //let usuariosJSON = fs.readFileSync('./data/users.json', { encoding: 'utf-8'});
           //let usuarios = JSON.parse(usuariosJSON);
           /*for (const user of users) {
