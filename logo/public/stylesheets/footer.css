@@ -1,5 +1,5 @@
 .base {
-    background-color: rgb(119, 119, 119);
+    background-color: rgb(0, 0, 0);
     color: white;
 }
 
@@ -11,10 +11,25 @@
     padding: 0px;
 }
 
+.del-footer {
+    color: white !important;
+    margin: 0px;
+}
+
 section h2 {
     color: black;
     text-align: center;
-    padding-top: 20px;
+    padding-top: 10px;
+}
+
+
+.underfooter {
+    text-align: center;
+    bottom: 10px;
+}
+
+.blueTo {
+    color: white !important;
 }
 
 section div div {
@@ -88,8 +103,12 @@ section div div {
 }
 
 .parte2 {
-    background-color: black;
+    background-color: rgb(46, 46, 46);
     padding-top: 20px;
+}
+
+.abc {
+    padding-bottom: 15px;
 }
 
 

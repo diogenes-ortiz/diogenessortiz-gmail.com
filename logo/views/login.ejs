@@ -34,7 +34,8 @@
                     <% } %>
                 </ul>
             <% } %>
-            <form method = "POST" action = '/users/login/'>
+            <div class="col-12 errores" style="color: red; text-align: center;"></div>
+            <form class="login" method = "POST" action = '/users/login/'>
                 <label class = 'offset-1 col-10 offset-1' ><h3>Email</h3></label>
                 <input class = 'offset-1 col-10 offset-1'type='text' name='email'>
                 <label class='offset-1 col-10 offset-1'><h3>Contraseña</h3></label>
@@ -45,6 +46,7 @@
             </form>
         </div>
     </div>
+    <script src='/jsFront/login.js' ></script>
     <%- include("./partials/footer") %>
 </body>
 </html>
