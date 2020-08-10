@@ -54,11 +54,15 @@ const productsController = {
         })
             .then(function(products) {
                 let Categoria = products[0].genre_id == 1 ? "Hombre" : "Mujer";
-                res.render("products/productsMix", {
-                    products:products,
-                    title: Categoria,
-                    fileCSS: "products/hombres.css"
-                })
+                if (Categoria == null) {
+                    res.send("CATEGORIA VACIA")
+                } else {
+                    res.render("products/productsMix", {
+                        products:products,
+                        title: Categoria,
+                        fileCSS: "products/hombres.css"
+                    })
+                }
             })
             .catch(function(error) {
                 console.log(error)

@@ -161,8 +161,11 @@ const mainController = {
         res.redirect("/");
     },
     edit : function(req, res, next) {
-        db.User.update(
-            req.body, {
+        db.User.update({
+            email: req.body.email,
+            first_name: req.body.first_name,
+            last_name: req.body.last_name,
+            password: bcrypt.hashSync(req.body.password, 10) } , {
                 where : {
                     id : req.params.id
                 }
