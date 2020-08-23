@@ -10,56 +10,8 @@ const mainController = {
         res.render('index')
     },
 
-    carrito : function (req,res){
-        db.Cart.findAll({
-            where: {
-                user_id: req.params.productsCategory
-            },
-            include: [{association: "genre"}, {association: "images"}]
-        })
-            .then(function(products) {
-                let Categoria = products[0].genre_id == 1 ? "Hombre" : "Mujer";
-                res.render("products/productsMix", {
-                    products:products,
-                    title: Categoria,
-                    fileCSS: "products/hombres.css"
-                })
-            })
-            .catch(function(error) {
-                console.log(error)
-            })
-
-
-        db.Product.findByPk(req.params.productsId, {
-            include: [{association: "genre"}, 
-                        {association: "images"}, 
-                        {association: "brand"},
-                        {association: "categories"},
-                        {association: "sizes"},
-                        {association: "colours"}]
-        })
-            .then(function(detail) {
-                res.render("products/detailM", {
-                    detail:detail,
-                    title: "Detalle de producto",
-                    fileCSS: "products/detail.css"
-                });
-            })
-            .catch(function(error) {
-                console.log(error)
-            })
-        res.render('carrito', {
-            title: "Carrito",
-            fileCSS: "carrito.css"
-        })
-    },
-
-    pago : function (req,res){
-        res.render('pago')
-    },
-
     register: function(req, res, next){
-        res.render('registro', {
+        res.render('register', {
             title: "Registro",
             fileCSS: "register.css"
         });
@@ -79,7 +31,7 @@ const mainController = {
 
             res.redirect('/')
         } else{
-            res.render('registro', {
+            res.render('register', {
                 errors:errors.errors,
                 title: "Registro",
                 fileCSS: "register.css"
@@ -98,10 +50,8 @@ const mainController = {
         let errors = validationResult(req);
 
         if(errors.isEmpty()) { // si NO hay errores
-            //let usersJSON = fs.readFileSync('./data/users.json', { encoding: 'utf-8'});
-            //let users;
 
-            //tomar os datos
+            //tomar los datos
             db.User.findOne({
                 //buscar al usuario en la base de datos, por email
                 where: {email: req.body.email}
@@ -148,7 +98,7 @@ const mainController = {
         }
     },
 
-    infoUser : function(req, res, next) {
+    profile : function(req, res, next) {
         let users = req.params.id
         db.User.findByPk(users)
             .then(function(user) {
@@ -156,10 +106,12 @@ const mainController = {
                 res.render("users", {user})
             })
     },
-    logOut : function(req, res, next) {
+
+    logout : function(req, res, next) {
         req.session.destroy();
         res.redirect("/");
     },
+
     edit : function(req, res, next) {
         db.User.update({
             email: req.body.email,
@@ -177,23 +129,4 @@ const mainController = {
     }
 }
 
-        /* 
-        let pedidoUsuario = db.User.findByPk(req.params.productId);
-        let pedidoCategorias = db.Category.findAll();
-        let pedidoGeneros = db.Genre.findAll();
-        let pedidoTalles = db.Size.findAll();
-
-        Promise.all([pedidoProducto, pedidoCategorias, pedidoGeneros, pedidoTalles])
-            .then(function([productToEdit, categories, genres, sizes, toto]) {
-                res.render("administEdit", {
-                    productToEdit: productToEdit, 
-                    categories:categories, 
-                    genres: genres, 
-                    sizes:sizes
-                })
-            })
-            .catch(function(error) {
-                console.log(error)
-            }) */
-
-module.exports=mainController
+module.exports = mainController

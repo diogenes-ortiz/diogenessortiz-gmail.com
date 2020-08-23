@@ -22,9 +22,11 @@ const productsController = {
                 console.log(error)
             })
     },
+    
     finish : function(req,res,next){
         res.render('products/thanksForBuying')
     },
+
     saleMain : function(req, res, next) {
         db.Product.findAll({
             where: {
@@ -89,21 +91,6 @@ const productsController = {
                 console.log(error)
             })
     }
-    
-        /*
-        //Traes la base de datos 
-        let datajson = fs.readFileSync('./data/products.json');
-        let datajs = JSON.parse(datajson);
-        //Creas variable con array vacio
-        let productsId= []
-        //Recorres la variable donde esta almacenada la base de datos
-        datajs.forEach(function (product) {
-        //le preguntas si el id es igual al que pasaron por la url 
-            if (product.id == req.params.productsId) {
-                productsId.push(product)
-            }
-        })
-*/
 }
 
 module.exports = productsController

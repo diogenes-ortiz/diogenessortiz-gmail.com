@@ -1,12 +1,15 @@
 var express = require('express');
 var router = express.Router();
-var mainController = require('../controllers/mainController');
+var cartsController = require('../controllers/cartsController');
 let authMiddleware = require('../middlewares/authMiddleware');
 let guestMiddleware = require('../middlewares/guestMiddleware');
 let adminMiddleware = require('../middlewares/adminMiddleware');
 
-router.get('/', mainController.carrito);
+/* GET cart list */
+router.get('/', cartsController.list);
 
-router.get('/pago', /*authMiddleware,*/ mainController.pago);
+//router.get('/pago', /*authMiddleware,*/ cartsController.pago);
+
+//router.get('/', /*authMiddleware,*/ cartsController.list);
 
 module.exports = router;

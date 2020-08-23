@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Store - Carrito</title>
+    <link rel="icon" href="/images/favicon2.png" type="image/png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/header.css">
+    <link rel="stylesheet" href="/stylesheets/fav.css">
+    <link rel="stylesheet" href="/stylesheets/footer.css">
+</head>
+<body>
+    <%- include("./partials/header") %>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="offset-lg-5 col-lg-2 offset-lg-5">
+                <h2>Favoritos</h2>
+            </div>
+            <div class="offset-lg-1 col-lg-10 offset-lg-1 offset-md-1 col-md-10 offset-md-1 offset-sm-1 col-sm-10 offset-sm-1 offset-1 col-10 offset-1 conttt">
+                <div class="row">
+                <section class="col-lg-1 col-md-1 col-sm-1 col-1">
+                    <div class="row">
+                        <section>
+                            <p class="titFoto">Foto</p>
+                        </section>
+                    </div>
+                </section>
+                <section class="col-lg-1 col-md-1 col-sm-1 offset-1 col-1">
+                    <div class="row">
+                        <p class="titFoto titT">Producto</p>
+                    </div>
+                </section>
+                <section class="col-lg-1 col-md-1 col-sm-1 offset-1 col-1">
+                    <div class="row">
+                        <p class="titFoto titP">Precio</p>
+                    </div>
+                </section>
+                <section class="offset-lg-3 col-lg-1 offset-md-1 col-md-1 offset-sm-1 col-sm-1 offset-2 col-1">
+                    <div class="row">
+                        <p class="titU">Unidades</p>
+                    </div>
+                </section>
+                </div>
+            </div>
+            <div class="offset-lg-1 col-lg-10 offset-lg-1 offset-md-1 col-md-10 offset-md-1 offset-sm-1 col-sm-10 offset-sm-1 offset-1 col-10 offset-1 conttt">
+                <div class="row">
+                    <%# for(let i = 0; i < cart.products.length; i++) { %>
+                        <section class="col-lg-2 col-md-2 col-sm-2 col-2 contImg">
+                            <div class="row">
+                                <img src="/<%=images[0].route %>" alt="">
+                            </div>
+                        </section>
+                        <section class="col-lg-2 col-md-2 col-sm-2 col-1 title">
+                            <div class="row">
+                                <p class="col-lg-4 col-md-4 col-sm-4 col-12"><%= cart.products[0].name %></p>
+                            </div>
+                        </section>
+                        <section class="col-lg-1 col-md-1 col-sm-1 col-1 price">
+                            <div class="row">
+                                <p class="col-lg-4 col-md-4 col-sm-4 col-4">
+                                    $ <%= cart.products[0].price %>
+                                </p>
+                            </div>
+                        </section>
+                        <section class="offset-lg-3 col-lg-1 offset-md-1 col-md-2 offset-sm-1 col-sm-2 col-3 cant">
+                            <div class="row">
+                                <form action="">
+                                    <button class="menYmar men">
+                                        -
+                                    </button>
+                                </form>
+                                <p class="numCant">2</p>
+                                <form action="">
+                                    <button class="menYmar mas">
+                                        +
+                                    </button>
+                                </form>
+                            </div>
+                        </section>
+                        <section class="col-lg-3 col-md-3col-sm-3 col-3 contDel">
+                            <div class="row">
+                                <section class="col-lg-6 col-md-8 col-sm-12 col-12 delete ">
+                                    <div class="row">
+                                        <form action="">
+                                            <button class="ver">Ver articulo</button>
+                                        </form>
+                                    </div>
+                                </section>
+                                <section class="col-lg-5 col-md-4 col-sm-12 col-12 delete del2">
+                                    <form action="">
+                                        <button class="del">Eliminar</button>
+                                    </form>
+                                </section>
+                            </div>
+                        </section>
+                    <%# } %>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <%- include("./partials/footer") %>
+</body>
+</html>

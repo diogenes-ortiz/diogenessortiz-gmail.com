@@ -3,14 +3,11 @@ const db = require('../database/models');
 const {Op} = require('sequelize');
 //const path = require('path');
 
-//const productsFilePath = path.join(__dirname, './data/productos.json');
-//const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-
-
 const administController = {
     main : function(req, res) {
         res.render("administ");
     },
+
     cargar : function(req, res) {
         db.Product.create({
             name : req.body.producto,

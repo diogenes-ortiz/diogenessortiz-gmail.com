@@ -11,6 +11,7 @@ let { check, validationResult, body } = require ('express-validator');
 let path = require('path');
 const db = require('../database/models');
 
+/* MULTER setup */
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
       cb(null, 'public/images')
@@ -25,7 +26,7 @@ var upload = multer({ storage: storage })
 /* GET home page. */
 router.get('/', mainController.home);
 
-/* GET register */
+/* GET user register */
 router.get('/register', guestMiddleware, mainController.register);
 router.post('/register', upload.any(), /*logDBMiddleWare,*/ [
     check ('first_name').isLength({min:2}).withMessage('Es necesario ingresar un nombre'),
@@ -34,7 +35,7 @@ router.post('/register', upload.any(), /*logDBMiddleWare,*/ [
     check('password').isLength({min:8}).withMessage('La contraseña debe tener al menos 8 caracteres'),
 ], mainController.sendregister);
 
-/* GET login */
+/* GET user login */
 router.get('/login', /*guestMiddleware,*/ mainController.login);
 
 //db.User.findAll()
@@ -68,9 +69,12 @@ router.get('/login', /*guestMiddleware,*/ mainController.login);
       }),*/
   ], mainController.sendlogin);
 //})
-/* GET ¿? */
-router.get("/info/:id", mainController.infoUser);
-router.post("/info", mainController.logOut)
+
+/* GET user profile */
+router.get("/info/:id", mainController.profile);
+/* POST user edit */
 router.post("/info/:id", mainController.edit);
+/* POST user logout */
+router.post("/info", mainController.logout);
 
 module.exports = router;

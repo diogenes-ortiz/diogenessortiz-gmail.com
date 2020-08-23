@@ -5,13 +5,16 @@ let authMiddleware = require('../middlewares/authMiddleware');
 let guestMiddleware = require('../middlewares/guestMiddleware');
 let adminMiddleware = require('../middlewares/adminMiddleware');
 
-/* GET detail */
+/* GET product detail */
 router.get("/detalle/:productsId", productsController.detail);
-/* GET gender */
+
+/* GET product gender */
 router.get("/genero/:productsGenero", productsController.mix);
-/* GET sale */
+
+/* GET product sale */
 router.get("/sale/:productsSale", productsController.saleMain);
-/* GET category */
+
+/* GET product category */
 router.get("/categoria/:productsCategory", productsController.category);
 
 router.get("/comprafinalizada", productsController.finish)

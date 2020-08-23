@@ -1,9 +1,14 @@
 var express = require('express');
 var router = express.Router();
-var productsController = require("../controllers/favController");
-const favController = require('../controllers/favController');
+var favController = require('../controllers/favController');
 
-router.get("/:id", favController.main);
-router.post("/:id", favController.get);
+/* GET favorite list */
+router.get("/:id", favController.list);
+
+/* POST favorite add */
+router.post("/:id", favController.add);
+
+/* DELETE favorite remove */
+router.delete("/:id", favController.remove);
 
 module.exports = router;

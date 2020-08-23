@@ -3,13 +3,13 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var methodOverride =  require('method-override');
-let session = require("express-session");
+var methodOverride = require('method-override');
+var session = require("express-session");
 
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var carritoRouter = require('./routes/carrito');
+var cartsRouter = require('./routes/carts');
 var productsRouter = require("./routes/products")
 var administRouter = require("./routes/administ");
 var favRouter = require("./routes/fav");
@@ -39,7 +39,7 @@ app.use(function (req, res, next) {
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/carrito', carritoRouter);
+app.use('/carts', cartsRouter);
 app.use('/products', productsRouter);
 app.use('/administrador', administRouter);
 app.use('/favorites', favRouter);
