@@ -72,16 +72,20 @@
                 </div>
                 <div class="col-12">
              <div class="row">
+                <form action="/favorites/" method="POST">
+                    <input type="hidden" value= "<%= detail.id %>" name="productId">
                 <button class="addTo addCora col-lg-3 col-md-3 col-sm-4 col-4"> ADD TO <svg class="bi bi-heart-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" clip-rule="evenodd"/>
                   </svg>
-                </button>
+                </button></form>
                 <article class="cora"> <p>|</p></article>
+                <form action="/carts/" method="POST">
+                    <input type="hidden" value="<%= detail.id %>" name="productId">
                     <button class="addTo col-lg-3 col-md-3 col-sm-4 col-4">
                     ADD TO <svg class="bolsa bi bi-bag-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path d="M1 4h14v10a2 2 0 01-2 2H3a2 2 0 01-2-2V4zm7-2.5A2.5 2.5 0 005.5 4h-1a3.5 3.5 0 117 0h-1A2.5 2.5 0 008 1.5z"/>
                       </svg>
-                    </button>
+                    </button></form>
             </div>
                 </div>
                 <p></p>
