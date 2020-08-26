@@ -1,3 +1,21 @@
+.submenuOpciones{
+  display: block !important;
+  padding-left: 0px !important;
+}
+
+ul.ulSubmenu{
+  padding-left: 0%!important;
+}
+a.submenuButtons{
+  color:white !important;
+}
+ul.submenu{
+  display:none;
+  padding-left: 10%!important;
+}
+.ulSubmenu li:hover .submenu{
+  display:block;
+}
 .contHeader {
   background-color: black;
   color: white;

@@ -6,7 +6,17 @@ body {
     background-color: white;
     border: 1px solid black;
 }
-
+svg.bi.bi-cart-fill{
+    margin-left:2px;
+    margin-bottom: 4px;
+}
+.cajaP img:hover {
+    transform: scale(1.05); 
+    box-shadow: 2px 2px 10px black;
+}
+.cajaP:hover{
+    transform: scale(1.05)
+}
 .ordenar {
     margin-top: 10px;
 }
