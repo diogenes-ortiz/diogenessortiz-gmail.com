@@ -4,7 +4,7 @@ body {
 
 .menu {
     background-color: white;
-    border: 1px solid black;
+    border-right: 2px solid rgb(192, 77, 77);
 }
 .cajaP img:hover {
     transform: scale(1.05); 
@@ -92,7 +92,7 @@ svg.bi.bi-cart-fill{
     margin-bottom: 4px;
 }
 .cajaP {
-    border: 3px black inset;
+    border: 3px rgb(192, 77, 77) solid;
     padding-top: 2%;
     padding-bottom: 2%;
     margin-left: 6%;
@@ -112,31 +112,32 @@ svg.bi.bi-cart-fill{
 }
 
 .cora {
-    background-color: black;
-    border: black 1px inset;
-    color: white;
+    background-color: white;
+    border: white 1px solid;
+    color: black;
     fill: white;
     padding-left: 0%;
     padding-right: 0%;
 }
 
 .cora:hover {
-    background-color: pink;
-    border: pink 2px solid;
+    background-color: white;
+    border: white 2px solid;
+    color: rgb(192, 77, 77);
 
 }
 
 .bolsa {
     background-color: white;
-    border: black 2px solid;
+    border: white 2px solid;
     color: black;
     padding: 0%;
 }
 
 .bolsa:hover {
-    background-color: grey;
-    border: grey 2px solid;
-    color: black;
+    background-color: white;
+    border: white 2px solid;
+    color: rgb(192, 77, 77);
 }
 
 .contBolsa {
